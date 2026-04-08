@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"c:/Users/laksh/Downloads/pointonezero/index.html\")",
+      "WebFetch(domain:juspay.io)",
+      "Bash(du -sh /c/Users/laksh/Downloads/*)",
+      "Bash(cmd /c \"del /q /f /s %TEMP%\\\\* 2>nul & rd /s /q %TEMP%\\\\claude 2>nul\")",
+      "Bash(mkdir -p \"c:/Users/laksh/Downloads/pointonezero_backup_$\\(date +%Y%m%d_%H%M%S\\)\")",
+      "Bash(cp -r \"c:/Users/laksh/Downloads/pointonezero/.\" \"c:/Users/laksh/Downloads/pointonezero_backup_$\\(date +%Y%m%d_%H%M%S\\)/\")",
+      "Read(//c/Users/laksh/Downloads/**)",
+      "Bash(pip show:*)"
+    ]
+  }
+}

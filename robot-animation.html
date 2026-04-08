@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>PointOneZero — Robot Animation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; overflow:hidden; }
+  body {
+    background: #d0e2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+  }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+'use strict';
+
+/* ══════════════════════════════════════════
+   CANVAS SETUP — hi-DPI, resize-aware
+══════════════════════════════════════════ */
+const canvas = document.getElementById('c');
+const ctx    = canvas.getContext('2d');
+let VW, VH, DPR;
+
+function resize() {
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  VW  = window.innerWidth;
+  VH  = window.innerHeight;
+  canvas.width  = VW * DPR;
+  canvas.height = VH * DPR;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+resize();
+window.addEventListener('resize', () => { resize(); });
+
+/* ══════════════════════════════════════════
+   RESPONSIVE SCALE
+   phone  < 480   → sc ≈ 0.38
+   iPhone 480–767 → sc ≈ 0.52
+   tablet 768–1023→ sc ≈ 0.72
+   laptop ≥ 1024  → sc ≈ 1.0
+══════════════════════════════════════════ */
+function getScale() {
+  const s = Math.min(VW / 960, VH / 620);
+  return Math.max(0.32, Math.min(s, 1.4));
+}
+
+/* ══════════════════════════════════════════
+   HELPER MATH
+══════════════════════════════════════════ */
+function lerp(a, b, t) { return a + (b - a) * t; }
+function ease(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+function clamp(v,a,b) { return Math.max(a, Math.min(b, v)); }
+function norm(t,a,b) { return clamp((t-a)/(b-a), 0, 1); }
+
+/* ══════════════════════════════════════════
+   ROUNDED RECT HELPER (compatible with all browsers)
+══════════════════════════════════════════ */
+function rr(x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.lineTo(x+w-r, y);   ctx.arcTo(x+w, y,   x+w, y+r,   r);
+  ctx.lineTo(x+w, y+h-r); ctx.arcTo(x+w, y+h, x+w-r, y+h, r);
+  ctx.lineTo(x+r, y+h);   ctx.arcTo(x,   y+h, x,   y+h-r, r);
+  ctx.lineTo(x, y+r);     ctx.arcTo(x,   y,   x+r, y,     r);
+  ctx.closePath();
+}
+
+/* ══════════════════════════════════════════
+   ISO BOX  — screen-space diamond + walls
+   cx,cy = top-face center
+   tw    = half-width of diamond
+   th    = half-height of diamond
+   bh    = wall height (downward)
+══════════════════════════════════════════ */
+function isoBox(cx, cy, tw, th, bh, cols, glow=false) {
+  const [top, left, right] = cols;
+
+  const Tp = {x:cx,    y:cy-th};
+  const Rt = {x:cx+tw, y:cy   };
+  const Bt = {x:cx,    y:cy+th};
+  const Lt = {x:cx-tw, y:cy   };
+  const BtW= {x:cx,    y:cy+th+bh};
+  const RtW= {x:cx+tw, y:cy+bh   };
+  const LtW= {x:cx-tw, y:cy+bh   };
+
+  if (glow) {
+    ctx.shadowColor = 'rgba(11,101,227,0.3)';
+    ctx.shadowBlur  = 18;
+  }
+
+  // Left wall
+  ctx.beginPath();
+  ctx.moveTo(Lt.x,Lt.y); ctx.lineTo(Bt.x,Bt.y);
+  ctx.lineTo(BtW.x,BtW.y); ctx.lineTo(LtW.x,LtW.y);
+  ctx.closePath();
+  ctx.fillStyle = left; ctx.fill();
+
+  // Right wall
+  ctx.beginPath();
+  ctx.moveTo(Rt.x,Rt.y); ctx.lineTo(Bt.x,Bt.y);
+  ctx.lineTo(BtW.x,BtW.y); ctx.lineTo(RtW.x,RtW.y);
+  ctx.closePath();
+  ctx.fillStyle = right; ctx.fill();
+
+  // Top face
+  ctx.beginPath();
+  ctx.moveTo(Tp.x,Tp.y); ctx.lineTo(Rt.x,Rt.y);
+  ctx.lineTo(Bt.x,Bt.y); ctx.lineTo(Lt.x,Lt.y);
+  ctx.closePath();
+  ctx.fillStyle = top; ctx.fill();
+
+  // Rim
+  ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+  ctx.lineWidth   = 1;
+  ctx.beginPath();
+  ctx.moveTo(Tp.x,Tp.y); ctx.lineTo(Rt.x,Rt.y);
+  ctx.lineTo(Bt.x,Bt.y); ctx.lineTo(Lt.x,Lt.y);
+  ctx.closePath(); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(Lt.x,Lt.y); ctx.lineTo(LtW.x,LtW.y);
+  ctx.lineTo(BtW.x,BtW.y); ctx.lineTo(RtW.x,RtW.y);
+  ctx.lineTo(Rt.x,Rt.y); ctx.stroke();
+
+  ctx.shadowBlur = 0;
+}
+
+/* ══════════════════════════════════════════
+   BADGE LABEL
+══════════════════════════════════════════ */
+function badge(sx, sy, dot, text, sc, alpha=1) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const fs = Math.round(clamp(11*sc, 9, 14));
+  ctx.font = `700 ${fs}px Inter,Arial,sans-serif`;
+  const tw = ctx.measureText(text).width;
+  const pw = tw + 22, ph = clamp(24*sc, 20, 28);
+  ctx.shadowColor = 'rgba(0,0,0,0.1)'; ctx.shadowBlur = 10;
+  ctx.fillStyle = 'rgba(255,255,255,0.96)';
+  rr(sx - pw/2, sy - ph/2, pw, ph, ph/2);
+  ctx.fill(); ctx.shadowBlur = 0;
+  ctx.fillStyle = dot;
+  ctx.beginPath(); ctx.arc(sx - tw/2 - 4, sy, 3.5, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#0d1b2a';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, sx + 4, sy);
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════
+   ENERGY PARTICLE
+══════════════════════════════════════════ */
+function energyDot(sx, sy, r, alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  const g = ctx.createRadialGradient(sx,sy,0, sx,sy,r*3.5);
+  g.addColorStop(0,   '#ffffff');
+  g.addColorStop(0.25,'#93c5fd');
+  g.addColorStop(1,   'rgba(11,101,227,0)');
+  ctx.beginPath(); ctx.arc(sx,sy,r*3.5,0,Math.PI*2);
+  ctx.fillStyle=g; ctx.fill();
+  ctx.shadowColor='#38bdf8'; ctx.shadowBlur=r*2;
+  ctx.fillStyle='#fff';
+  ctx.beginPath(); ctx.arc(sx,sy,r,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════
+   ROBOT
+══════════════════════════════════════════ */
+function drawRobot(sx, sy, s, glow, alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.translate(sx, sy);
+
+  if (glow > 0.05) {
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur  = 20*glow;
+  }
+
+  // drop shadow
+  ctx.fillStyle = 'rgba(11,101,227,0.12)';
+  ctx.beginPath();
+  ctx.ellipse(0, 11*s, 11*s, 3.5*s, 0, 0, Math.PI*2); ctx.fill();
+
+  // legs
+  ctx.fillStyle = '#b8d4f0';
+  rr(-9*s, 5*s, 7*s, 7*s, 2*s); ctx.fill();
+  rr( 2*s, 5*s, 7*s, 7*s, 2*s); ctx.fill();
+
+  // body
+  const bodyG = ctx.createLinearGradient(0,-11*s,0,5*s);
+  bodyG.addColorStop(0,'#ddf0ff'); bodyG.addColorStop(1,'#b4d8f5');
+  ctx.fillStyle = bodyG;
+  rr(-12*s,-11*s,24*s,18*s,5*s); ctx.fill();
+  ctx.strokeStyle='rgba(11,101,227,0.25)'; ctx.lineWidth=s; ctx.stroke();
+
+  // arms
+  ctx.fillStyle='#c5def5';
+  rr(-18*s,-8*s,6*s,11*s,3*s); ctx.fill();
+  rr( 12*s,-8*s,6*s,11*s,3*s); ctx.fill();
+
+  // chest panel
+  const panelG = ctx.createLinearGradient(0,-8*s,0,0);
+  panelG.addColorStop(0,'#0b65e3'); panelG.addColorStop(1,'#2b8eff');
+  ctx.fillStyle=panelG;
+  rr(-6.5*s,-8.5*s,13*s,10*s,2*s); ctx.fill();
+
+  // chest dots
+  const dotColors = ['#f0abfc','#7dd3fc','#86efac'];
+  dotColors.forEach((c,i) => {
+    ctx.fillStyle=c;
+    ctx.shadowColor=c; ctx.shadowBlur=5*glow+2;
+    ctx.beginPath(); ctx.arc(-3.5*s+i*3.5*s,-3.5*s,1.6*s,0,Math.PI*2); ctx.fill();
+  });
+  ctx.shadowBlur=0;
+
+  // head
+  const headG = ctx.createLinearGradient(0,-28*s,0,-13*s);
+  headG.addColorStop(0,'#f0f9ff'); headG.addColorStop(1,'#d8edff');
+  ctx.fillStyle=headG;
+  rr(-9*s,-28*s,18*s,16*s,4*s); ctx.fill();
+  ctx.strokeStyle='rgba(11,101,227,0.2)'; ctx.lineWidth=s; ctx.stroke();
+
+  // antenna
+  ctx.strokeStyle='#90c4e8'; ctx.lineWidth=1.5*s;
+  ctx.beginPath(); ctx.moveTo(0,-28*s); ctx.lineTo(0,-35*s); ctx.stroke();
+  ctx.fillStyle = glow>0.2 ? '#38bdf8':'#7dd3fc';
+  ctx.shadowColor='#38bdf8'; ctx.shadowBlur=glow>0.2?10:3;
+  ctx.beginPath(); ctx.arc(0,-36*s,2.5*s,0,Math.PI*2); ctx.fill();
+  ctx.shadowBlur=0;
+
+  // eyes
+  ctx.fillStyle='#0b65e3';
+  ctx.beginPath(); ctx.ellipse(-4*s,-20*s,2.8*s,3.2*s,0,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse( 4*s,-20*s,2.8*s,3.2*s,0,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#fff';
+  ctx.beginPath(); ctx.arc(-5*s,-21.5*s,0.9*s,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc( 3*s,-21.5*s,0.9*s,0,Math.PI*2); ctx.fill();
+
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════
+   CONNECTOR LINE
+══════════════════════════════════════════ */
+function connector(x1,y1,x2,y2,alpha,dashOff) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.strokeStyle = 'rgba(11,101,227,0.22)';
+  ctx.lineWidth   = 1.5;
+  ctx.setLineDash([7,7]);
+  ctx.lineDashOffset = -dashOff;
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════
+   TRAIL PARTICLES
+══════════════════════════════════════════ */
+const trail = [];
+let trailTick = 0;
+
+function addTrail(x, y) {
+  trail.push({
+    x, y,
+    r: 3 + Math.random()*3,
+    life: 1,
+    vx: (Math.random()-0.5)*0.7,
+    vy: -0.6 - Math.random()*0.6
+  });
+}
+function tickTrail() {
+  for (let i=trail.length-1;i>=0;i--) {
+    const p=trail[i];
+    p.life-=0.05; p.x+=p.vx; p.y+=p.vy; p.r*=0.96;
+    if (p.life<=0) trail.splice(i,1);
+  }
+}
+function drawTrail() {
+  trail.forEach(p => {
+    ctx.save();
+    ctx.globalAlpha=p.life*0.45;
+    ctx.shadowColor='#38bdf8'; ctx.shadowBlur=8;
+    ctx.fillStyle='#93c5fd';
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+  });
+}
+
+/* ══════════════════════════════════════════
+   ROBOT GROUP
+══════════════════════════════════════════ */
+function robotGroup(cx, cy, sc) {
+  // Spread adapts to screen size
+  const sp = clamp(15*sc, 10, 22);
+  return [
+    {x: cx - sp*1.2, y: cy + sp*0.4},
+    {x: cx,          y: cy - sp*0.3},
+    {x: cx + sp*1.2, y: cy + sp*0.4}
+  ];
+}
+
+/* ══════════════════════════════════════════
+   BRAIN NODE
+══════════════════════════════════════════ */
+function drawBrain(cx, cy, r, t) {
+  const g = ctx.createRadialGradient(cx,cy,0, cx,cy,r*2.5);
+  g.addColorStop(0,'rgba(11,101,227,0.5)');
+  g.addColorStop(1,'rgba(11,101,227,0)');
+  ctx.fillStyle=g;
+  ctx.beginPath(); ctx.arc(cx,cy,r*2.5,0,Math.PI*2); ctx.fill();
+
+  ctx.fillStyle='#0b65e3';
+  ctx.shadowColor='#38bdf8'; ctx.shadowBlur=12;
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
+  ctx.shadowBlur=0;
+
+  const pulse = 0.5+0.5*Math.sin(t*3);
+  ctx.strokeStyle=`rgba(56,189,248,${0.35*pulse})`;
+  ctx.lineWidth=2.5;
+  ctx.beginPath(); ctx.arc(cx,cy,r*(1+0.28*pulse),0,Math.PI*2); ctx.stroke();
+
+  for (let i=0;i<8;i++) {
+    const a = i/8*Math.PI*2 + t*0.9;
+    ctx.fillStyle='rgba(255,255,255,0.7)';
+    ctx.beginPath();
+    ctx.arc(cx+Math.cos(a)*r*0.55, cy+Math.sin(a)*r*0.55, 1.6, 0, Math.PI*2);
+    ctx.fill();
+  }
+}
+
+/* ══════════════════════════════════════════
+   COMPUTE BOX LAYOUT — responsive
+   Layout modes:
+     desktop (≥768): diamond with B2 top-left, B3 top-right, B4 top-center
+     mobile  (<768): linear vertical stack
+══════════════════════════════════════════ */
+function getLayout(sc) {
+  const cx = VW/2, cy = VH/2;
+
+  if (VW >= 768) {
+    // Desktop / laptop / tablet landscape
+    const tw = 110*sc, th = 52*sc, bh = 48*sc;
+    return {
+      tw, th, bh,
+      B1: {x: cx,            y: cy + 70*sc},   // center-bottom — robot home
+      B2: {x: cx - 230*sc,   y: cy - 80*sc},   // top-left — Strategy
+      B3: {x: cx + 220*sc,   y: cy - 80*sc},   // top-right — AI Design
+      B4: {x: cx,            y: cy - 200*sc},  // top-center — hub/brain
+      labels: {
+        strategy:  {x: cx - 230*sc - 130*sc, y: cy - 80*sc  - 55*sc },
+        aidesign:  {x: cx + 220*sc + 130*sc, y: cy - 80*sc  - 55*sc },
+        automation:{x: cx        - 150*sc,   y: cy + 70*sc  + 58*sc },
+        agents:    {x: cx + 220*sc + 130*sc, y: cy - 80*sc  + 70*sc },
+      }
+    };
+  } else {
+    // Phone / iPhone — compact vertical layout
+    const tw = 80*sc, th = 38*sc, bh = 34*sc;
+    const vgap = 100*sc;
+    return {
+      tw, th, bh,
+      B1: {x: cx,         y: cy + vgap*0.5},        // center
+      B2: {x: cx - 110*sc, y: cy - vgap*0.7},       // left
+      B3: {x: cx + 110*sc, y: cy - vgap*0.7},       // right
+      B4: {x: cx,          y: cy - vgap*1.9},       // top
+      labels: {
+        strategy:  {x: cx - 110*sc - 90*sc, y: cy - vgap*0.7 - 42*sc },
+        aidesign:  {x: cx + 110*sc + 90*sc, y: cy - vgap*0.7 - 42*sc },
+        automation:{x: cx - 120*sc,         y: cy + vgap*0.5 + 48*sc },
+        agents:    {x: cx + 110*sc + 90*sc, y: cy - vgap*0.7 + 55*sc },
+      }
+    };
+  }
+}
+
+/* ══════════════════════════════════════════
+   MAIN ANIMATION LOOP
+══════════════════════════════════════════ */
+let t = 0;
+const DUR = 14;  // seconds per cycle
+
+function frame(ts) {
+  requestAnimationFrame(frame);
+  t = (ts / 1000) % DUR;
+
+  ctx.clearRect(0, 0, VW, VH);
+
+  // Background
+  const bg = ctx.createLinearGradient(0,0,VW,VH);
+  bg.addColorStop(0,'#bdd8ef'); bg.addColorStop(1,'#ddeeff');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,VW,VH);
+
+  const sc  = getScale();
+  const lay = getLayout(sc);
+  const {tw,th,bh,B1,B2,B3,B4,labels} = lay;
+
+  const dashOff = (t*22) % 14;
+  const brainY  = B4.y - th - 20*sc;
+
+  // Connector lines (from brain to box tops)
+  connector(B4.x, brainY+14*sc, B1.x, B1.y-th, 0.85, dashOff);
+  connector(B4.x, brainY+14*sc, B2.x+tw*0.6, B2.y, 0.85, dashOff);
+  connector(B4.x, brainY+14*sc, B3.x-tw*0.6, B3.y, 0.85, dashOff);
+
+  // Boxes — draw back-to-front
+  isoBox(B4.x, B4.y, tw*0.8, th*0.8, bh*0.7,
+    ['#cce3f8','#9ac3ec','#b2d5f5']);
+
+  isoBox(B2.x, B2.y, tw*0.85, th*0.85, bh*0.75,
+    ['#d8eeff','#a8cef0','#bedbf8']);
+
+  isoBox(B3.x, B3.y, tw*0.85, th*0.85, bh*0.75,
+    ['#d8eeff','#a8cef0','#bedbf8']);
+
+  // B1 — home box, bigger and brighter
+  isoBox(B1.x, B1.y, tw*1.1, th*1.1, bh*1.1,
+    ['#e4f2ff','#b0d3f4','#c5e0fa'], true);
+
+  // Brain node on B4
+  drawBrain(B4.x, brainY, 18*sc, t);
+
+  // Labels
+  badge(labels.strategy.x,   labels.strategy.y,   '#22c55e', 'Strategy',    sc);
+  badge(labels.aidesign.x,   labels.aidesign.y,   '#3b82f6', 'AI Design',   sc);
+  badge(labels.automation.x, labels.automation.y, '#f97316', 'Automation',  sc);
+  badge(labels.agents.x,     labels.agents.y,     '#a855f7', '120+ Agents', sc);
+
+  /* ── TIMELINE ──────────────────────────────────
+     0.0 – 1.5   : "pointonezero" text
+     1.5 – 2.5   : text → dot
+     2.5 – 4.0   : dot flies to B1
+     4.0 – 5.2   : dot absorbed → robots appear
+     5.2 – 7.0   : robots B1 → B2
+     7.0 – 8.0   : pause B2
+     8.0 – 9.5   : robots B2 → B3
+     9.5 – 10.5  : pause B3
+     10.5 – 12.5 : robots B3 → B1
+     12.5 – 14.0 : fade out → loop
+  ────────────────────────────────────────────── */
+  let textAlpha=0, dotAlpha=0;
+  let ePos={x:VW/2, y:VH/2-80*sc};
+  let eAlpha=0, eR=8*sc;
+  let rp=null, rAlpha=0, rGlow=0, moving=false;
+
+  if (t < 1.5) {
+    textAlpha = clamp(t/0.4, 0, 1);
+  }
+  else if (t < 2.5) {
+    const p=ease(norm(t,1.5,2.5));
+    textAlpha=1-p; dotAlpha=p;
+  }
+  else if (t < 4.0) {
+    const p=ease(norm(t,2.5,4.0));
+    ePos = {x:lerp(VW/2,B1.x,p), y:lerp(VH/2-80*sc,B1.y-th-18*sc,p)};
+    eAlpha=1; eR=lerp(7*sc,13*sc,p);
+  }
+  else if (t < 5.2) {
+    const p=ease(norm(t,4.0,5.2));
+    ePos = {x:B1.x, y:B1.y-th-18*sc};
+    eAlpha=1-p; eR=lerp(13*sc,44*sc,p);
+    rp=robotGroup(B1.x, B1.y-th-8*sc, sc);
+    rAlpha=p; rGlow=p;
+  }
+  else if (t < 7.0) {
+    const p=ease(norm(t,5.2,7.0));
+    const mx=lerp(B1.x,B2.x,p), my=lerp(B1.y-th-8*sc,B2.y-th-8*sc,p);
+    rp=robotGroup(mx,my,sc); rAlpha=1; rGlow=0.4; moving=true;
+  }
+  else if (t < 8.0) {
+    rp=robotGroup(B2.x,B2.y-th-8*sc,sc); rAlpha=1; rGlow=0.7;
+  }
+  else if (t < 9.5) {
+    const p=ease(norm(t,8.0,9.5));
+    const mx=lerp(B2.x,B3.x,p), my=lerp(B2.y-th-8*sc,B3.y-th-8*sc,p);
+    rp=robotGroup(mx,my,sc); rAlpha=1; rGlow=0.4; moving=true;
+  }
+  else if (t < 10.5) {
+    rp=robotGroup(B3.x,B3.y-th-8*sc,sc); rAlpha=1; rGlow=0.7;
+  }
+  else if (t < 12.5) {
+    const p=ease(norm(t,10.5,12.5));
+    const mx=lerp(B3.x,B1.x,p), my=lerp(B3.y-th-8*sc,B1.y-th-8*sc,p);
+    rp=robotGroup(mx,my,sc); rAlpha=1; rGlow=0.4; moving=true;
+  }
+  else {
+    const p=norm(t,12.5,14);
+    rp=robotGroup(B1.x,B1.y-th-8*sc,sc);
+    rAlpha=1-p; rGlow=0.3*(1-p);
+  }
+
+  // Trail
+  tickTrail();
+  if (moving && rp) {
+    trailTick++;
+    if (trailTick%2===0) rp.forEach(r=>addTrail(r.x,r.y));
+  }
+  drawTrail();
+
+  // Energy dot
+  if (eAlpha > 0.01) energyDot(ePos.x, ePos.y, eR, eAlpha);
+
+  // Robots
+  if (rAlpha > 0.01 && rp) {
+    const rs = clamp(0.68*sc, 0.28, 1.0);
+    rp.forEach(r => drawRobot(r.x, r.y, rs, rGlow, rAlpha));
+  }
+
+  // "pointonezero" text
+  if (textAlpha > 0.01 || dotAlpha > 0.01) {
+    const tx=VW/2, ty=VH/2 - 70*sc;
+    if (textAlpha > 0.01) {
+      ctx.save();
+      ctx.globalAlpha=textAlpha;
+      // gradient text
+      const tg=ctx.createLinearGradient(tx-120*sc,ty,tx+120*sc,ty);
+      tg.addColorStop(0,'#044eb5'); tg.addColorStop(1,'#2b8eff');
+      const fs=clamp(Math.round(34*sc),18,44);
+      ctx.font=`900 ${fs}px Inter,Arial,sans-serif`;
+      ctx.shadowColor='rgba(11,101,227,0.3)'; ctx.shadowBlur=18;
+      ctx.fillStyle=tg;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('pointonezero', tx, ty);
+      ctx.shadowBlur=0;
+      const sf=clamp(Math.round(13*sc),10,16);
+      ctx.font=`400 ${sf}px Inter,Arial,sans-serif`;
+      ctx.fillStyle='rgba(11,101,227,0.55)';
+      ctx.fillText('AI-Powered Growth. Built for Impact.', tx, ty+28*sc);
+      ctx.restore();
+    }
+    if (dotAlpha > 0.01) energyDot(tx, ty, 8*sc, dotAlpha);
+  }
+}
+
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+/* ══════════════════════════════════════════
+   ABOUT PAGE STYLES
+══════════════════════════════════════════ */
+
+/* ── HERO ── */
+.ab-hero {
+  background : var(--hero-bg);
+  padding    : 80px 40px 0;
+  overflow   : hidden;
+}
+.ab-hero-inner {
+  max-width    : 800px;
+  margin       : 0 auto;
+  text-align   : center;
+  padding-bottom: 60px;
+}
+.ab-hero-h1 {
+  font-size    : clamp(38px, 5.5vw, 68px);
+  font-weight  : 900;
+  line-height  : 1.1;
+  letter-spacing: -2px;
+  color        : var(--text-dark);
+  margin-bottom: 20px;
+}
+.ab-hero-sub {
+  font-size  : 18px;
+  color      : var(--text-mid);
+  max-width  : 560px;
+  margin     : 0 auto;
+  line-height: 1.65;
+}
+.ab-hero-img-strip {
+  position   : relative;
+  max-width  : 1100px;
+  margin     : 0 auto;
+  border-radius: 20px 20px 0 0;
+  overflow   : hidden;
+  height     : 420px;
+}
+.ab-hero-img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.ab-hero-img-overlay {
+  position  : absolute;
+  inset     : 0;
+  background: linear-gradient(to bottom, transparent 50%, var(--white-bg) 100%);
+}
+
+/* ── WHO WE ARE ── */
+.ab-who {
+  display        : grid;
+  grid-template-columns: 1fr 1fr;
+  gap            : 80px;
+  align-items    : center;
+  max-width      : 1160px;
+  margin         : 0 auto;
+  padding        : 100px 40px;
+}
+.ab-who-img {
+  border-radius: 20px;
+  overflow     : hidden;
+  aspect-ratio : 4/3;
+}
+.ab-who-img img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.ab-who-img:hover img { transform: scale(1.04); }
+
+.ab-who-text h2 {
+  font-size    : clamp(30px, 3.5vw, 48px);
+  font-weight  : 800;
+  line-height  : 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+  color        : var(--text-dark);
+}
+.ab-who-text p {
+  font-size  : 16px;
+  color      : var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.ab-who-stats {
+  display: flex;
+  gap    : 36px;
+}
+.ab-stat {
+  display       : flex;
+  flex-direction: column;
+  gap           : 4px;
+}
+.ab-stat-num {
+  font-size  : 36px;
+  font-weight: 900;
+  color      : var(--text-dark);
+  line-height: 1;
+}
+.ab-stat-tag {
+  font-size  : 20px;
+  color      : var(--blue);
+}
+.ab-stat-label {
+  font-size  : 12px;
+  font-weight: 600;
+  color      : var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── EXPERTISE — dark ── */
+.ab-expertise {
+  background: var(--dark-bg);
+  padding   : 100px 40px;
+  position  : relative;
+  overflow  : hidden;
+}
+.ab-expertise::after {
+  content         : '';
+  position        : absolute;
+  inset           : 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size : 55px 55px;
+  pointer-events  : none;
+  z-index         : 0;
+}
+.ab-expertise-inner {
+  max-width: 1160px;
+  margin   : 0 auto;
+  position : relative;
+  z-index  : 1;
+  display  : grid;
+  grid-template-columns: 340px 1fr;
+  gap      : 80px;
+  align-items: start;
+}
+.ab-exp-text h2 {
+  font-size    : clamp(28px, 3vw, 44px);
+  font-weight  : 800;
+  color        : var(--white);
+  line-height  : 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+.ab-exp-text p {
+  font-size: 15px;
+  color    : rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+.ab-exp-grid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : 2px;
+}
+.ab-exp-card {
+  background : rgba(255,255,255,0.04);
+  border     : 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding    : 28px;
+  transition : background .3s;
+}
+.ab-exp-card:hover { background: rgba(11,101,227,0.12); }
+.ab-exp-icon {
+  width        : 44px;
+  height       : 44px;
+  background   : rgba(11,101,227,0.15);
+  border-radius: 10px;
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  color        : var(--blue-light);
+  margin-bottom: 16px;
+}
+.ab-exp-card h3 {
+  font-size  : 15px;
+  font-weight: 700;
+  color      : var(--white);
+  margin-bottom: 8px;
+}
+.ab-exp-card p {
+  font-size  : 13.5px;
+  color      : rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+/* 5th card spans full width */
+.ab-exp-card:last-child {
+  grid-column: 1 / -1;
+}
+
+/* ── VISION ── */
+.ab-vision {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : 80px;
+  align-items          : center;
+  max-width            : 1160px;
+  margin               : 0 auto;
+  padding              : 100px 40px;
+}
+.ab-vision-text h2 {
+  font-size    : clamp(28px, 3vw, 44px);
+  font-weight  : 800;
+  line-height  : 1.2;
+  letter-spacing: -1px;
+  color        : var(--text-dark);
+  margin-bottom: 14px;
+}
+.ab-vision-text p {
+  font-size  : 15px;
+  color      : var(--text-muted);
+  margin-bottom: 32px;
+}
+.ab-vision-pills {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 12px;
+}
+.ab-pill {
+  display      : inline-flex;
+  align-items  : center;
+  gap          : 7px;
+  background   : var(--light-bg);
+  border       : 1.5px solid rgba(11,101,227,0.15);
+  border-radius: var(--radius-pill);
+  padding      : 9px 18px;
+  font-size    : 14px;
+  font-weight  : 600;
+  color        : var(--text-dark);
+}
+.ab-pill svg { color: var(--blue); flex-shrink: 0; }
+
+.ab-vision-img {
+  border-radius: 20px;
+  overflow     : hidden;
+  aspect-ratio : 4/3;
+}
+.ab-vision-img img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.ab-vision-img:hover img { transform: scale(1.04); }
+
+/* ── PROCESS ── */
+.ab-process {
+  background: var(--light-bg);
+  padding   : 100px 40px;
+}
+.ab-process-head {
+  text-align   : center;
+  max-width    : 600px;
+  margin       : 0 auto 64px;
+}
+.ab-process-head h2 {
+  font-size    : clamp(30px, 3.5vw, 48px);
+  font-weight  : 800;
+  line-height  : 1.15;
+  letter-spacing: -1.5px;
+  color        : var(--text-dark);
+}
+.ab-steps {
+  display              : grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap                  : 24px;
+  max-width            : 1160px;
+  margin               : 0 auto;
+}
+
+/* ── FLIP CARD ── */
+.ab-flip-card {
+  aspect-ratio   : 3/4;
+  perspective    : 1000px;
+  cursor         : default;
+}
+.ab-flip-inner {
+  position        : relative;
+  width           : 100%;
+  height          : 100%;
+  transform-style : preserve-3d;
+  transition      : transform .7s cubic-bezier(.4,0,.2,1);
+  border-radius   : 18px;
+}
+/* Flip on hover */
+.ab-flip-card:hover .ab-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* ── FRONT & BACK shared ── */
+.ab-flip-front,
+.ab-flip-back {
+  position              : absolute;
+  inset                 : 0;
+  border-radius         : 18px;
+  backface-visibility   : hidden;
+  -webkit-backface-visibility: hidden;
+  overflow              : hidden;
+}
+
+/* FRONT — image only */
+.ab-flip-front {
+  background: #000;
+}
+.ab-flip-front img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.ab-flip-card:hover .ab-flip-front img {
+  transform: scale(1.04);
+}
+
+/* Arrow button on top-center */
+.ab-flip-arrow {
+  position       : absolute;
+  top            : 14px;
+  left           : 50%;
+  transform      : translateX(-50%);
+  width          : 38px;
+  height         : 38px;
+  background     : rgba(255,255,255,0.92);
+  border-radius  : 50%;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  color          : var(--text-dark);
+  box-shadow     : 0 4px 14px rgba(0,0,0,.18);
+  /* bounce up/down */
+  animation      : arrowBounce 1.8s ease-in-out infinite;
+  transition     : background .25s, transform .25s;
+}
+.ab-flip-card:hover .ab-flip-arrow {
+  background: #fff;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);   }
+  50%       { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* Arrow rotates to point down when card is hovered */
+.ab-flip-card:hover .ab-flip-arrow {
+  animation: none;
+  transform : translateX(-50%) rotate(180deg);
+}
+
+/* BACK — white bg, black text */
+.ab-flip-back {
+  transform      : rotateY(180deg);
+  background     : #ffffff;
+  border         : 1px solid rgba(0,0,0,.07);
+  box-shadow     : 0 8px 40px rgba(0,0,0,.10);
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  padding        : 36px 28px;
+}
+.ab-flip-back h3 {
+  font-size    : 21px;
+  font-weight  : 800;
+  color        : var(--text-dark);
+  margin-bottom: 14px;
+  line-height  : 1.2;
+  opacity      : 0;
+  transform    : translateY(18px);
+  transition   : opacity .4s ease .35s, transform .4s ease .35s;
+}
+.ab-flip-back p {
+  font-size  : 14.5px;
+  color      : var(--text-muted);
+  line-height: 1.7;
+  opacity    : 0;
+  transform  : translateY(18px);
+  transition : opacity .4s ease .48s, transform .4s ease .48s;
+}
+/* Animate content in on hover */
+.ab-flip-card:hover .ab-flip-back h3,
+.ab-flip-card:hover .ab-flip-back p {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .ab-who,
+  .ab-vision {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ab-expertise-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ab-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ab-flip-card { aspect-ratio: 4/5; }
+}
+@media (max-width: 600px) {
+  .ab-hero { padding: 60px 20px 0; }
+  .ab-who, .ab-vision, .ab-process { padding: 60px 20px; }
+  .ab-expertise { padding: 60px 20px; }
+  .ab-steps { grid-template-columns: 1fr; }
+  .ab-exp-grid { grid-template-columns: 1fr; }
+  .ab-exp-card:last-child { grid-column: auto; }
+  .ab-who-stats { gap: 24px; }
+  .ab-hero-img-strip { height: 240px; }
+}

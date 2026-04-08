@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PointOneZero — AI-Powered Growth. Built for Impact.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       NAVBAR
+  ═══════════════════════════════ -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="POZ Logo.png" alt="PointOneZero Logo" class="logo-img" />
+        <span>PointOneZero</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+
+      <a href="contact.html" class="nav-cta">Contact us <span class="cta-arrow">&#9658;</span></a>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════
+       HERO — BLUE BG
+  ═══════════════════════════════ -->
+  <section class="hero-section">
+
+    <!-- Hero text -->
+    <div class="hero-text">
+      <h1 class="hero-h1">
+        <em class="hero-blue">AI-Powered</em> Growth.<br />Built for Impact.
+      </h1>
+      <p class="hero-sub">
+        We are an AI-native company transforming how businesses innovate, scale,<br class="desk-br" />
+        and succeed through strategy, design, and engineering.
+      </p>
+      <p class="hero-tagline">Turn bold ideas into measurable business outcomes.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-dark">Let's Talk</a>
+        <a href="about.html" class="btn-outline-dark">
+          LEARN MORE
+          <span class="btn-play">&#9654;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="hero-img-wrap">
+      <div class="hero-glow"></div>
+      <img src="ai-workflow.png" alt="AI-Powered Workflow Platform" class="hero-img" id="heroImg" />
+
+      <!-- Animated floating chips -->
+      <div class="chip chip-1"><span class="chip-dot green"></span> Strategy</div>
+      <div class="chip chip-2"><span class="chip-dot blue"></span> AI Design</div>
+      <div class="chip chip-3"><span class="chip-dot orange"></span> Automation</div>
+      <div class="chip chip-4"><span class="chip-dot purple"></span> 120+ Agents</div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════
+       METRICS — WHITE BG
+  ═══════════════════════════════ -->
+  <section class="metrics-section">
+    <div class="metrics-intro">
+      <p class="metrics-label"><em>INCREDIBLY</em></p>
+      <p class="metrics-arrow">&#8963;</p>
+      <blockquote class="metrics-quote">
+        <span class="mq-open">&#8220;</span>
+        From seamless AI experiences, managing complex workflows,
+        automating pipelines, to end-to-end product engineering,
+        everything that accelerates your
+        <span class="mq-highlight">10x growth</span>
+        <span class="mq-close">&#8221;</span>
+      </blockquote>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-item" data-val="24" data-suffix="hrs">
+        <div class="metric-num"><span class="mcount">24</span> <span class="metric-tag">Hours</span></div>
+        <p>Innovation at the speed of thought</p>
+      </div>
+      <div class="metric-item" data-val="10" data-suffix="X">
+        <div class="metric-num"><span class="mcount">10</span><span class="metric-tag">X Faster</span></div>
+        <p>Accelerated product delivery</p>
+      </div>
+      <div class="metric-item" data-val="120" data-suffix="+">
+        <div class="metric-num"><span class="mcount">120</span><span class="metric-tag">+ AI Agents</span></div>
+        <p>Boosting productivity at scale</p>
+      </div>
+      <div class="metric-item" data-val="50" data-suffix="%">
+        <div class="metric-num"><span class="mcount">50</span><span class="metric-tag">% Cost Reduction</span></div>
+        <p>Efficiency through automation</p>
+      </div>
+    </div>
+    <p class="metrics-footer-note"><em>ENGINEERED TO ALWAYS<br />HAVE YOUR BACK</em></p>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FULL STACK — DARK BG WITH GRID
+  ═══════════════════════════════ -->
+  <section class="dark-feature-section" id="services">
+    <!-- Decorative shapes -->
+    <div class="deco-circle-tl"></div>
+    <div class="deco-circle-br"></div>
+
+    <div class="dark-inner">
+      <div class="dark-header">
+        <span class="dark-pill">FULL STACK SOLUTION</span>
+        <h2 class="dark-h2">PointOneZero <span class="blue-text">AI Platform</span></h2>
+        <p class="dark-sub">
+          Our platform combines the power of native AI experiences, robust workflow<br />
+          orchestration &amp; advanced analytics.
+        </p>
+        <a href="contact.html" class="btn-dark">Learn More</a>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <h3>Strategy</h3>
+          <p>AI-driven business strategy aligned with your goals and market opportunities for maximum impact.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Design Studio</h3>
+          <p>Design branded AI-native experiences for Web, Android, and iOS tailored to your brand's aesthetic.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h3>Orchestration</h3>
+          <p>Enterprise-grade automation that routes your workflows to the best performing AI pipeline intelligently.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Analytics</h3>
+          <p>Unlock the true power of your data with AI-powered insights, real-time dashboards, and smart reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       VALUE PROP — LIGHT BG
+  ═══════════════════════════════ -->
+  <section class="value-section" id="about">
+    <div class="value-content">
+      <div class="value-label">FROM PROTOTYPE TO PRODUCTION</div>
+      <h2 class="value-h2">
+        We don't just build ideas —<br />
+        <span class="blue-text">we bring them to life.</span>
+      </h2>
+      <p class="value-body">
+        From concept to deployment, we ensure speed, quality, and scalability. Our
+        end-to-end approach means you never have to worry about the gap between
+        vision and execution.
+      </p>
+
+      <ul class="value-checklist">
+        <li><span class="tick">&#10003;</span> Rapid prototyping with AI-assisted development</li>
+        <li><span class="tick">&#10003;</span> Scalable cloud-native architecture</li>
+        <li><span class="tick">&#10003;</span> Continuous delivery and deployment pipelines</li>
+        <li><span class="tick">&#10003;</span> Real-time monitoring and performance optimization</li>
+      </ul>
+      <a href="contact.html" class="btn-dark">Start Your Journey</a>
+    </div>
+
+    <div class="value-steps">
+      <div class="vstep vstep-active">
+        <span class="vstep-num">01</span>
+        <div>
+          <h4>Discover</h4>
+          <p>Deep-dive into your business goals and map the AI opportunity landscape.</p>
+        </div>
+      </div>
+      <div class="vstep-line"></div>
+      <div class="vstep">
+        <span class="vstep-num">02</span>
+        <div>
+          <h4>Design</h4>
+          <p>Craft intelligent workflows, interfaces, and scalable system architecture.</p>
+        </div>
+      </div>
+      <div class="vstep-line"></div>
+      <div class="vstep">
+        <span class="vstep-num">03</span>
+        <div>
+          <h4>Build</h4>
+          <p>Rapid engineering cycles powered by 120+ specialized AI agents.</p>
+        </div>
+      </div>
+      <div class="vstep-line"></div>
+      <div class="vstep">
+        <span class="vstep-num">04</span>
+        <div>
+          <h4>Scale</h4>
+          <p>Deploy, monitor, optimize, and grow with data-driven decisions continuously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       PHILOSOPHY — LIGHT BG
+  ═══════════════════════════════ -->
+  <section class="philosophy-section">
+    <div class="philosophy-head">
+      <span class="section-eyebrow">YOUR GOALS. OUR MISSION.</span>
+      <h2>We partner with you <span class="blue-text">at every step.</span></h2>
+      <p>Delivering fast execution, continuous support, and measurable success.</p>
+    </div>
+    <div class="philosophy-grid">
+      <div class="phil-card">
+        <div class="phil-num">01</div>
+        <h3>Speed Without Compromise</h3>
+        <p>10x faster delivery cycles without sacrificing quality or reliability. We ship what matters, when it matters.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">02</div>
+        <h3>AI-First Mindset</h3>
+        <p>Every solution we build starts with asking: how can AI make this smarter, faster, and more impactful?</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">03</div>
+        <h3>Measurable Outcomes</h3>
+        <p>We define success by your metrics — ROI, conversion, efficiency. That's the only scorecard that matters.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">04</div>
+        <h3>True Partnership</h3>
+        <p>We're an extension of your team, fully invested in your growth and long-term success — not just a vendor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       WALL OF WORDS — WHITE BG
+  ═══════════════════════════════ -->
+  <section class="wow-section">
+    <div class="wow-head">
+      <span class="section-eyebrow">TRUSTED BY THE BEST</span>
+      <h2>The Wall of Words <span class="wow-script">We make their day better, everyday</span></h2>
+    </div>
+
+    <div class="wow-track-outer">
+      <div class="wow-track" id="wowTrack">
+        <div class="wow-card" style="--rot: -2deg; --border-col: #0b65e3;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"PointOneZero transformed our operations. Their AI agents reduced our manual workload by 60% within the first month alone."</p>
+          <span class="wow-author">Alex M., CTO — TechFlow</span>
+        </div>
+        <div class="wow-card" style="--rot: 1.5deg; --border-col: #7c3aed;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"The platform is incredibly user-friendly and has made a significant impact on streamlining our workflows and driving key success metrics."</p>
+          <span class="wow-author">Priya S., Product Lead — Nexify</span>
+        </div>
+        <div class="wow-card" style="--rot: -1deg; --border-col: #0aaeb3;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"Using their dynamic AI routing logic, we achieved a nearly 30% improvement in operational efficiency, impacting overall delivery positively."</p>
+          <span class="wow-author">Jordan K., VP Engineering — ScaleUp</span>
+        </div>
+        <div class="wow-card" style="--rot: 2deg; --border-col: #ef2f27;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"PointOneZero continues to offer a range of AI solutions with ease of integration — helping us deliver seamless experiences to our customers."</p>
+          <span class="wow-author">Riya T., CEO — InnovateCo</span>
+        </div>
+        <div class="wow-card" style="--rot: -1.5deg; --border-col: #fbb829;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"We admire PointOneZero for their great UI and consistent experience across Web, Android, and iOS platforms. Truly best in class."</p>
+          <span class="wow-author">Marcus L., Design Director — Orbit</span>
+        </div>
+        <div class="wow-card" style="--rot: 1deg; --border-col: #0b65e3;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"Their teams have always worked together to achieve a better product experience for our customers. The conversion rates speak for themselves."</p>
+          <span class="wow-author">Sneha R., Head of Growth — PulseCart</span>
+        </div>
+        <!-- Duplicate for infinite loop -->
+        <div class="wow-card" style="--rot: -2deg; --border-col: #0b65e3;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"PointOneZero transformed our operations. Their AI agents reduced our manual workload by 60% within the first month alone."</p>
+          <span class="wow-author">Alex M., CTO — TechFlow</span>
+        </div>
+        <div class="wow-card" style="--rot: 1.5deg; --border-col: #7c3aed;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"The platform is incredibly user-friendly and has made a significant impact on streamlining our workflows and driving key success metrics."</p>
+          <span class="wow-author">Priya S., Product Lead — Nexify</span>
+        </div>
+        <div class="wow-card" style="--rot: -1deg; --border-col: #0aaeb3;">
+          <div class="wow-logo">&#127381;</div>
+          <p>"Using their dynamic AI routing logic, we achieved a nearly 30% improvement in operational efficiency, impacting overall delivery positively."</p>
+          <span class="wow-author">Jordan K., VP Engineering — ScaleUp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CTA BAND
+  ═══════════════════════════════ -->
+  <section class="cta-band" id="contact">
+    <div class="cta-band-inner">
+      <h2>Ready to build the <span class="blue-text">future</span> together?</h2>
+      <p>Let's connect and explore how AI can transform your business outcomes.</p>
+      <div class="cta-band-btns">
+        <a href="contact.html" class="btn-dark">Let's Talk</a>
+        <a href="work.html" class="btn-outline-dark">View Our Work <span class="btn-play">&#9654;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          <img src="POZ Logo.png" alt="PointOneZero Logo" class="logo-img" />
+          <span>PointOneZero</span>
+        </a>
+        <address class="footer-addr">
+          PointOneZero<br />
+          Registered Office: Princeton, NJ, USA<br />
+          <a href="tel:+16789014328">(678) 901-4328</a><br />
+          <a href="mailto:admin@pointonezero.com">admin@pointonezero.com</a>
+        </address>
+      </div>
+
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Strategy</a></li>
+            <li><a href="services.html">Product Engineering</a></li>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Data &amp; Analytics</a></li>
+            <li><a href="services.html">Design Studio</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Compliances</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">ISO 27001:2022</a></li>
+            <li><a href="#">SOC 2 Type 2</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright 2026. PointOneZero. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

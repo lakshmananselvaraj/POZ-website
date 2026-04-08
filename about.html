@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Point One Zero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+        <span>Point One Zero</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="nav-active">About</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Contact us <span class="cta-arrow">&#9658;</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="ab-hero">
+    <div class="ab-hero-inner">
+      <span class="section-eyebrow">ABOUT US</span>
+      <h1 class="ab-hero-h1">
+        Making AI Transformation<br />
+        <em class="blue-text" style="font-style:normal;">Simple, Fast, and Human.</em>
+      </h1>
+      <p class="ab-hero-sub">
+        We help businesses unlock the power of AI through strategy, design, and engineering.
+      </p>
+    </div>
+    <!-- Hero visual: full-width image strip -->
+    <div class="ab-hero-img-strip">
+      <img
+        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80&auto=format&fit=crop"
+        alt="Team collaborating"
+        class="ab-hero-img"
+      />
+      <div class="ab-hero-img-overlay"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       WHO WE ARE — split layout
+  ═══════════════════════════════ -->
+  <section class="ab-who">
+    <div class="ab-who-img">
+      <img
+        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80&auto=format&fit=crop"
+        alt="AI team at work"
+      />
+    </div>
+    <div class="ab-who-text">
+      <span class="section-eyebrow">WHO WE ARE</span>
+      <h2>An AI-native collective<br />built for impact.</h2>
+      <p>
+        Point One Zero builds intelligent systems that improve performance,
+        reduce costs, and enhance user experiences. We move fast — from
+        idea to execution — delivering real business value.
+      </p>
+      <div class="ab-who-stats">
+        <div class="ab-stat">
+          <span class="ab-stat-num">10<span class="ab-stat-tag">X</span></span>
+          <span class="ab-stat-label">Faster Delivery</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat-num">120<span class="ab-stat-tag">+</span></span>
+          <span class="ab-stat-label">AI Agents</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat-num">50<span class="ab-stat-tag">%</span></span>
+          <span class="ab-stat-label">Cost Reduction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       EXPERTISE — dark section
+  ═══════════════════════════════ -->
+  <section class="ab-expertise">
+    <div class="ab-expertise-inner">
+      <div class="ab-exp-text">
+        <span class="section-eyebrow" style="color:rgba(255,255,255,0.5);">OUR EXPERTISE</span>
+        <h2>Everything you need<br />to scale with AI.</h2>
+        <p>Five deep practice areas. One unified delivery team.</p>
+      </div>
+      <div class="ab-exp-grid">
+        <div class="ab-exp-card">
+          <div class="ab-exp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>AI Product Development</h3>
+          <p>End-to-end AI products built for scale and performance.</p>
+        </div>
+        <div class="ab-exp-card">
+          <div class="ab-exp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h3>Intelligent Automation</h3>
+          <p>Smart workflows that eliminate manual effort at scale.</p>
+        </div>
+        <div class="ab-exp-card">
+          <div class="ab-exp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Scalable System Design</h3>
+          <p>Cloud-native architecture that grows with your business.</p>
+        </div>
+        <div class="ab-exp-card">
+          <div class="ab-exp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>UX &amp; Interface Design</h3>
+          <p>Branded AI-native experiences users actually love.</p>
+        </div>
+        <div class="ab-exp-card">
+          <div class="ab-exp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Data-Driven Decision Systems</h3>
+          <p>Real-time analytics and AI insights that drive action.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       VISION — light section with image
+  ═══════════════════════════════ -->
+  <section class="ab-vision">
+    <div class="ab-vision-text">
+      <span class="section-eyebrow">OUR VISION</span>
+      <h2>We build solutions<br />that last.</h2>
+      <p>Every system we ship meets four non-negotiables.</p>
+      <div class="ab-vision-pills">
+        <span class="ab-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Scalable
+        </span>
+        <span class="ab-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Secure
+        </span>
+        <span class="ab-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          High-performing
+        </span>
+        <span class="ab-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Cost-efficient
+        </span>
+      </div>
+    </div>
+    <div class="ab-vision-img">
+      <img
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop"
+        alt="Technology and innovation"
+      />
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       PROCESS — numbered steps
+  ═══════════════════════════════ -->
+  <section class="ab-process">
+    <div class="ab-process-head">
+      <span class="section-eyebrow">HOW WE WORK</span>
+      <h2>From idea to impact<br /><span class="blue-text">in four steps.</span></h2>
+    </div>
+
+    <div class="ab-steps">
+
+      <!-- Card 1 -->
+      <div class="ab-flip-card">
+        <div class="ab-flip-inner">
+          <div class="ab-flip-front">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80&auto=format&fit=crop" alt="Strategy" />
+            <div class="ab-flip-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </div>
+          </div>
+          <div class="ab-flip-back">
+            <h3>Innovation &amp; Strategy</h3>
+            <p>Define goals, identify opportunities, and create a clear roadmap to value.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ab-flip-card">
+        <div class="ab-flip-inner">
+          <div class="ab-flip-front">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80&auto=format&fit=crop" alt="Design" />
+            <div class="ab-flip-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </div>
+          </div>
+          <div class="ab-flip-back">
+            <h3>Design &amp; Prototyping</h3>
+            <p>Rapid design iterations with real-time validation and feedback loops.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ab-flip-card">
+        <div class="ab-flip-inner">
+          <div class="ab-flip-front">
+            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=600&q=80&auto=format&fit=crop" alt="Development" />
+            <div class="ab-flip-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </div>
+          </div>
+          <div class="ab-flip-back">
+            <h3>Development &amp; Integration</h3>
+            <p>AI-powered systems built and integrated with your existing business platforms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="ab-flip-card">
+        <div class="ab-flip-inner">
+          <div class="ab-flip-front">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop" alt="Launch" />
+            <div class="ab-flip-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </div>
+          </div>
+          <div class="ab-flip-back">
+            <h3>Launch &amp; Learn</h3>
+            <p>Deploy, monitor, and continuously improve using real-world insights and data.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CTA BAND
+  ═══════════════════════════════ -->
+  <section class="cta-band" id="contact">
+    <div class="cta-band-inner">
+      <h2>Ready to start your<br /><span class="blue-text">AI journey?</span></h2>
+      <p>Schedule a meeting and let's explore how we can transform your business.</p>
+      <div class="cta-band-btns">
+        <a href="contact.html" class="btn-dark">Schedule a Meeting</a>
+        <a href="index.html" class="btn-outline-dark">Back to Home <span class="btn-play">&#9654;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+          <span>Point One Zero</span>
+        </a>
+        <address class="footer-addr">
+          Point One Zero<br />
+          Registered Office: Princeton, NJ, USA<br />
+          <a href="tel:+16789014328">(678) 901-4328</a><br />
+          <a href="mailto:admin@pointonezero.com">admin@pointonezero.com</a>
+        </address>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Strategy</a></li>
+            <li><a href="services.html">Product Engineering</a></li>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Data &amp; Analytics</a></li>
+            <li><a href="services.html">Design Studio</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Compliances</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">ISO 27001:2022</a></li>
+            <li><a href="#">SOC 2 Type 2</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2026. Point One Zero. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

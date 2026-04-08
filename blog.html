@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Point One Zero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+        <span>Point One Zero</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="blog.html" class="nav-active">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Contact us <span class="cta-arrow">&#9658;</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="bl-hero">
+    <span class="section-eyebrow">INSIGHTS &amp; IDEAS</span>
+    <h1 class="bl-hero-h1">The Point One Zero<br /><span class="blue-text">Blog</span></h1>
+    <p class="bl-hero-sub">Thoughts on AI, product strategy, engineering, and building businesses that actually scale.</p>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FEATURED POST
+  ═══════════════════════════════ -->
+  <section class="bl-featured-section">
+    <div class="bl-featured-inner">
+      <div class="bl-featured-card">
+        <div class="bl-featured-img">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&h=420&fit=crop&auto=format" alt="AI Strategy" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div class="bl-featured-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag">AI Strategy</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">March 28, 2026</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-read">8 min read</span>
+          </div>
+          <h2 class="bl-featured-title">Why AI-Native Isn't Just a Buzzword — It's a Business Model Shift</h2>
+          <p class="bl-featured-desc">Most companies are bolting AI onto existing workflows. AI-native companies are building differently from day one — and the gap between these two approaches will define who wins the next decade.</p>
+          <a href="#" class="bl-read-btn">Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ARTICLES GRID
+  ═══════════════════════════════ -->
+  <section class="bl-grid-section">
+    <div class="bl-grid-inner">
+
+      <!-- Post 1 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=320&fit=crop&auto=format" alt="AI Coding" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-green">Product Engineering</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">March 15, 2026</span>
+          </div>
+          <h3 class="bl-card-title">How We Cut Development Time by 60% Using AI-Assisted Coding</h3>
+          <p class="bl-card-desc">A behind-the-scenes look at how our engineering team integrated AI pair programming tools into every stage of the SDLC — and what surprised us most.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">6 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=320&fit=crop&auto=format" alt="Automation" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-orange">Automation</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">March 5, 2026</span>
+          </div>
+          <h3 class="bl-card-title">The Automation Playbook: From Manual Chaos to Intelligent Workflows</h3>
+          <p class="bl-card-desc">We've helped 6+ companies automate their core operations. Here's the exact framework we use to identify what to automate first and how to measure the ROI.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">5 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=320&fit=crop&auto=format" alt="UX Design" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-purple">Design</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">February 20, 2026</span>
+          </div>
+          <h3 class="bl-card-title">Designing for AI: Why UX Patterns Need to Evolve for Intelligent Products</h3>
+          <p class="bl-card-desc">AI-powered products behave differently from traditional software. Here's how we approach UX design when the output is dynamic, probabilistic, and personalized.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">7 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=320&fit=crop&auto=format" alt="Data Analytics" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-blue">Data &amp; Analytics</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">February 10, 2026</span>
+          </div>
+          <h3 class="bl-card-title">Turning Raw Data Into Business Intelligence: A Practical Framework</h3>
+          <p class="bl-card-desc">Data is everywhere but insights are rare. We walk through how to build a lightweight analytics stack that actually informs decisions — without a team of data scientists.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">9 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=320&fit=crop&auto=format" alt="Business Growth" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-red">Growth</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">January 28, 2026</span>
+          </div>
+          <h3 class="bl-card-title">10X Growth Isn't a Slogan — Here's the Engineering Behind It</h3>
+          <p class="bl-card-desc">What does 10X actually look like in practice? We break down the systems, decisions, and trade-offs that allowed one of our clients to scale 10x in 18 months.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">11 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 6 -->
+      <article class="bl-card">
+        <div class="bl-card-img"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=320&fit=crop&auto=format" alt="Healthcare AI" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div class="bl-card-body">
+          <div class="bl-post-meta">
+            <span class="bl-tag bl-tag-green">Healthcare AI</span>
+            <span class="bl-dot">·</span>
+            <span class="bl-date">January 14, 2026</span>
+          </div>
+          <h3 class="bl-card-title">AI in Healthcare: Reducing Claims Processing Time from Days to Minutes</h3>
+          <p class="bl-card-desc">Our work with a healthcare provider revealed how AI-assisted claims analysis can reduce processing time by 70% while improving accuracy. Here's what we learned.</p>
+          <div class="bl-card-footer">
+            <span class="bl-read">6 min read</span>
+            <a href="#" class="bl-link">Read more &#8594;</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CTA BAND
+  ═══════════════════════════════ -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <h2>Have an idea or topic<br /><span class="blue-text">you'd like us to cover?</span></h2>
+      <p>We write about what we build. Tell us what you want to learn.</p>
+      <div class="cta-band-btns">
+        <a href="contact.html" class="btn-dark">Get in Touch</a>
+        <a href="work.html" class="btn-outline-dark">Our Work <span class="btn-play">&#9654;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+          <span>Point One Zero</span>
+        </a>
+        <address class="footer-addr">
+          Point One Zero<br />
+          Registered Office: Princeton, NJ, USA<br />
+          <a href="tel:+16789014328">(678) 901-4328</a><br />
+          <a href="mailto:admin@pointonezero.com">admin@pointonezero.com</a>
+        </address>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Strategy</a></li>
+            <li><a href="services.html">Product Engineering</a></li>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Data &amp; Analytics</a></li>
+            <li><a href="services.html">Design Studio</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Compliances</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">ISO 27001:2022</a></li>
+            <li><a href="#">SOC 2 Type 2</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2026. Point One Zero. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

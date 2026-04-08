@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Work — Point One Zero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="work.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+        <span>Point One Zero</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="work.html" class="nav-active">Our Work</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Contact us <span class="cta-arrow">&#9658;</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="wk-hero">
+    <span class="section-eyebrow">OUR WORK</span>
+    <h1 class="wk-hero-h1">
+      Real projects.<br />
+      <span class="blue-text">Measurable outcomes.</span>
+    </h1>
+    <p class="wk-hero-sub">
+      From AI-powered automation to intelligent platforms —
+      here's how we've helped businesses grow smarter and move faster.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════
+       PROJECT CARDS GRID
+  ═══════════════════════════════ -->
+  <section class="wk-grid-section">
+    <div class="wk-grid">
+
+      <!-- Card 1: Retail -->
+      <div class="wk-card" data-cat="retail">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Retail
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#e8f0fe,#c7d9fd);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0b65e3" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <span class="wk-brand-name">AI Intelligence<br />Automation</span>
+        </div>
+        <p class="wk-card-desc">
+          Turned fragmented data into real-time insights and reduced analysis time from days to minutes.
+        </p>
+      </div>
+
+      <!-- Card 2: Social Media -->
+      <div class="wk-card" data-cat="social">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Social Media
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#fdf4ff,#ead5fd);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <span class="wk-brand-name">Social Media<br />Automation AI</span>
+        </div>
+        <p class="wk-card-desc">
+          Generated data-driven content strategies and automated publishing workflows at scale.
+        </p>
+      </div>
+
+      <!-- Card 3: Healthcare -->
+      <div class="wk-card" data-cat="healthcare">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Healthcare
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#ecfdf5,#a7f3d0);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z"/></svg>
+          </div>
+          <span class="wk-brand-name">AI Claims<br />Analysis</span>
+        </div>
+        <p class="wk-card-desc">
+          Reduced manual effort and enabled faster, smarter decision-making across claims processing.
+        </p>
+      </div>
+
+      <!-- Card 4: EdTech -->
+      <div class="wk-card" data-cat="edtech">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            EdTech
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#fff7ed,#fed7aa);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <span class="wk-brand-name">Parent Engagement<br />CRM</span>
+        </div>
+        <p class="wk-card-desc">
+          Unified communication systems and improved engagement with AI-powered insights for parents and students.
+        </p>
+      </div>
+
+      <!-- Card 5: Enterprise -->
+      <div class="wk-card" data-cat="enterprise">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Enterprise
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#f0f9ff,#bae6fd);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0aaeb3" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span class="wk-brand-name">SDLC Automation<br />Platform</span>
+        </div>
+        <p class="wk-card-desc">
+          Streamlined the development lifecycle with intelligent automation and real-time tracking dashboards.
+        </p>
+      </div>
+
+      <!-- Card 6: Government -->
+      <div class="wk-card" data-cat="government">
+        <div class="wk-card-top">
+          <div class="wk-cat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+            Government
+          </div>
+          <div class="wk-cat-line"></div>
+        </div>
+        <div class="wk-card-brand">
+          <div class="wk-brand-icon" style="background:linear-gradient(135deg,#fef2f2,#fecaca);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <span class="wk-brand-name">Digital Resident<br />Experience Platform</span>
+        </div>
+        <p class="wk-card-desc">
+          Improved government services through unified digital interactions, transparency, and citizen-first design.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       RESULTS BAND — DARK
+  ═══════════════════════════════ -->
+  <section class="wk-results">
+    <div class="wk-results-inner">
+      <div class="wk-results-text">
+        <span class="section-eyebrow" style="color:rgba(255,255,255,.4);">PROVEN IMPACT</span>
+        <h2>Every project.<br />Every outcome. Measured.</h2>
+        <p>We don't just ship — we track, iterate, and improve until the numbers prove the value.</p>
+        <a href="contact.html" class="btn-dark">Start Your Project</a>
+      </div>
+      <div class="wk-results-stats">
+        <div class="wk-rs-item">
+          <span class="wk-rs-num">6<em>+</em></span>
+          <span class="wk-rs-label">AI Projects<br />Delivered</span>
+        </div>
+        <div class="wk-rs-item">
+          <span class="wk-rs-num">50<em>%</em></span>
+          <span class="wk-rs-label">Average Cost<br />Reduction</span>
+        </div>
+        <div class="wk-rs-item">
+          <span class="wk-rs-num">10<em>X</em></span>
+          <span class="wk-rs-label">Faster<br />Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CTA
+  ═══════════════════════════════ -->
+  <section class="cta-band" id="contact">
+    <div class="cta-band-inner">
+      <h2>Your project could be<br /><span class="blue-text">next.</span></h2>
+      <p>Let's build something that delivers real results.</p>
+      <div class="cta-band-btns">
+        <a href="contact.html" class="btn-dark">Start a Project</a>
+        <a href="services.html" class="btn-outline-dark">Our Services <span class="btn-play">&#9654;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+          <span>Point One Zero</span>
+        </a>
+        <address class="footer-addr">
+          Point One Zero<br />
+          Registered Office: Princeton, NJ, USA<br />
+          <a href="tel:+16789014328">(678) 901-4328</a><br />
+          <a href="mailto:admin@pointonezero.com">admin@pointonezero.com</a>
+        </address>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Strategy</a></li>
+            <li><a href="services.html">Product Engineering</a></li>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Data &amp; Analytics</a></li>
+            <li><a href="services.html">Design Studio</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Compliances</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">ISO 27001:2022</a></li>
+            <li><a href="#">SOC 2 Type 2</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2026. Point One Zero. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
