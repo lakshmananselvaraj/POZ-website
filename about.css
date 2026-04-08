@@ -318,37 +318,56 @@
   transform: scale(1.04);
 }
 
-/* Arrow button on top-center */
-.ab-flip-arrow {
+/* Header overlay at top of front card */
+.ab-front-header {
   position       : absolute;
-  top            : 14px;
-  left           : 50%;
-  transform      : translateX(-50%);
+  top            : 0;
+  left           : 0;
+  right          : 0;
+  padding        : 18px 20px 14px;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : 10px;
+}
+
+.ab-front-title {
+  font-size    : 22px;
+  font-weight  : 700;
+  color        : #ffffff;
+  text-align   : center;
+  line-height  : 1.25;
+  margin       : 0;
+  text-shadow  : 0 1px 6px rgba(0,0,0,0.45);
+}
+
+/* Arrow button — sits below the title */
+.ab-flip-arrow {
   width          : 38px;
   height         : 38px;
   background     : rgba(255,255,255,0.92);
+  border         : 1.5px solid rgba(0,0,0,0.10);
   border-radius  : 50%;
   display        : flex;
   align-items    : center;
   justify-content: center;
   color          : var(--text-dark);
   box-shadow     : 0 4px 14px rgba(0,0,0,.18);
-  /* bounce up/down */
   animation      : arrowBounce 1.8s ease-in-out infinite;
-  transition     : background .25s, transform .25s;
+  transition     : background .25s;
 }
 .ab-flip-card:hover .ab-flip-arrow {
   background: #fff;
 }
 @keyframes arrowBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0);   }
-  50%       { transform: translateX(-50%) translateY(-6px); }
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-5px); }
 }
 
 /* Arrow rotates to point down when card is hovered */
 .ab-flip-card:hover .ab-flip-arrow {
   animation: none;
-  transform : translateX(-50%) rotate(180deg);
+  transform : rotate(180deg);
 }
 
 /* BACK — white bg, black text */
