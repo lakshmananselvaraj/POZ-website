@@ -66,7 +66,7 @@
         <h2 class="ct-form-title">Send us a message</h2>
         <p class="ct-form-sub">We'll get back to you within 24 hours.</p>
 
-        <form class="ct-form" id="contactForm">
+        <form class="ct-form" id="contactForm" action="https://formspree.io/f/mnqedplz" method="POST">
           <div class="ct-field-group">
             <label class="ct-label" for="ct-name">Name</label>
             <input class="ct-input" type="text" id="ct-name" name="name" placeholder="Your full name" required />
@@ -76,10 +76,19 @@
             <input class="ct-input" type="email" id="ct-email" name="email" placeholder="you@company.com" required />
           </div>
           <div class="ct-field-group">
+            <label class="ct-label" for="ct-phone">Phone (Optional)</label>
+            <input class="ct-input" type="tel" id="ct-phone" name="phone" placeholder="(123) 456-7890" />
+          </div>
+          <div class="ct-field-group">
+            <label class="ct-label" for="ct-company">Company (Optional)</label>
+            <input class="ct-input" type="text" id="ct-company" name="company" placeholder="Your company name" />
+          </div>
+          <div class="ct-field-group">
             <label class="ct-label" for="ct-message">Message</label>
             <textarea class="ct-input ct-textarea" id="ct-message" name="message" placeholder="Tell us about your project or idea..." rows="5" required></textarea>
           </div>
-          <button type="submit" class="ct-submit-btn">
+          <input type="hidden" name="_redirect" value="https://lakshmananselvaraj.github.io/POZ-website/contact.html?success=true" />
+          <button type="submit" class="ct-submit-btn" id="ctSubmitBtn">
             Get in Touch
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>

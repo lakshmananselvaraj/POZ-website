@@ -115,6 +115,10 @@
   transition   : background .25s ease;
 }
 .ct-submit-btn:hover { background: var(--blue); }
+.ct-submit-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
 
 /* Success message */
 .ct-success {
@@ -123,6 +127,21 @@
   font-size  : 13.5px;
   font-weight: 600;
   color      : #059669;
+  animation  : slideInSuccess .3s ease;
+}
+.ct-success.visible {
+  display: block;
+}
+
+@keyframes slideInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── RIGHT COLUMN ── */

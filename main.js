@@ -172,3 +172,31 @@ window.addEventListener('scroll', () => {
     if (a.getAttribute('href') === `#${cur}`) a.classList.add('nav-active');
   });
 }, { passive: true });
+
+/* ══════════════════════════════════════════
+   CONTACT FORM HANDLING
+══════════════════════════════════════════ */
+const contactForm = document.getElementById('contactForm');
+const ctSuccess = document.getElementById('ctSuccess');
+const ctSubmitBtn = document.getElementById('ctSubmitBtn');
+
+if (contactForm) {
+  // Show success message if redirected back
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === 'true') {
+    if (ctSuccess) {
+      ctSuccess.style.display = 'block';
+      ctSuccess.classList.add('visible');
+    }
+    // Clear the URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
+  // Handle form submission with visual feedback
+  contactForm.addEventListener('submit', (e) => {
+    if (ctSubmitBtn) {
+      ctSubmitBtn.disabled = true;
+      ctSubmitBtn.innerHTML = 'Sending...';
+    }
+  });
+}
