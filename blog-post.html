@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Blog — Point One Zero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog-post.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+        <span>Point One Zero</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="blog.html" class="nav-active">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Contact us <span class="cta-arrow">&#9658;</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <div class="bp-hero" id="bpHero">
+    <div class="bp-hero-overlay"></div>
+    <div class="bp-hero-content">
+      <div class="bp-meta" id="bpMeta"></div>
+      <h1 class="bp-hero-title" id="bpTitle">Loading…</h1>
+      <div class="bp-hero-byline">
+        <img src="POZ Logo.png" alt="Point One Zero" class="bp-byline-avatar" />
+        <span>Point One Zero Team</span>
+        <span class="bp-hero-dot">·</span>
+        <span id="bpRead"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <main class="bp-main">
+    <div class="bp-container">
+      <a href="blog.html" class="bp-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+        Back to Blog
+      </a>
+      <div class="bp-content" id="bpContent"></div>
+    </div>
+  </main>
+
+  <!-- MORE ARTICLES CTA -->
+  <section class="bp-more">
+    <div class="bp-more-inner">
+      <span class="section-eyebrow">Keep Reading</span>
+      <h2>Explore More Insights from<br /><span class="blue-text">Point One Zero</span></h2>
+      <p>We write about what we build — AI, automation, product engineering, and building technology that matters.</p>
+      <div class="bp-more-btns">
+        <a href="blog.html" class="btn-dark">View All Articles</a>
+        <a href="contact.html" class="btn-outline-dark">Work With Us <span class="btn-play">&#9654;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+          <span>Point One Zero</span>
+        </a>
+        <address class="footer-addr">
+          Point One Zero<br />
+          Registered Office: Princeton, NJ, USA<br />
+          <a href="tel:+16789014328">(678) 901-4328</a><br />
+          <a href="mailto:admin@pointonezero.com">admin@pointonezero.com</a>
+        </address>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Strategy</a></li>
+            <li><a href="services.html">Product Engineering</a></li>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Data &amp; Analytics</a></li>
+            <li><a href="services.html">Design Studio</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Compliances</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">ISO 27001:2022</a></li>
+            <li><a href="#">SOC 2 Type 2</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2026. Point One Zero. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/point-one-zero/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+  /* ══════════════════════════════════════════
+     ARTICLE DATA
+     img      = full-width hero background
+     bodyImg  = in-article photograph
+  ══════════════════════════════════════════ */
+  const ARTICLES = {
+
+    /* ── FEATURED ─────────────────────────── */
+    featured: {
+      tag: 'AI Strategy', tagClass: '',
+      date: 'March 28, 2026', read: '8 min read',
+      title: 'AI for Every Business: How We Are Making Enterprise Technology Accessible to All',
+      img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">For decades, enterprise-grade technology — the kind that transforms operations, predicts markets, and scales intelligently — was reserved for companies with millions in IT budgets and teams of data scientists. That era is ending. And at Point One Zero, we're actively accelerating its end.</p>
+
+        <h2>The Inequality Problem in Business Technology</h2>
+        <p>Walk into any Fortune 500 company and you'll find AI-powered forecasting, intelligent automation, real-time analytics, and custom-built internal tools. Walk into a 50-person manufacturing company or a regional hospital or a community nonprofit — and you'll often find spreadsheets, email chains, and manual processes that haven't changed in 15 years.</p>
+        <p>This isn't a technology gap. The tools exist. It's an access gap — a gap in expertise, in capital, and in the knowledge of what's even possible. The result is a compounding disadvantage: businesses that can't access modern technology fall further behind every year, while the gap between them and their larger competitors keeps widening.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&h=600&fit=crop&auto=format" alt="Small business owner using AI-powered tools on a laptop" />
+          <figcaption>A small business owner using modern analytics tools — technology that used to require an enterprise IT budget is now within reach for every organization.</figcaption>
+        </figure>
+
+        <h2>What We Mean by "Democratizing AI"</h2>
+        <p>Democratizing AI doesn't mean giving everyone access to a chatbot. It means making the real benefits of artificial intelligence — intelligent automation, predictive analytics, personalized customer experiences, scalable operations — available to organizations of all sizes, at a price point that makes sense for their stage.</p>
+        <p>For a 20-person logistics startup, that might mean an automated document processing system that eliminates 15 hours of data entry per week. For a community health clinic, it might mean a patient scheduling system that reduces no-shows by 40%. For a regional retailer, it might mean demand forecasting that reduces overstock by 30%.</p>
+        <p>None of these require a data science team. They require the right architecture, the right tools, and a partner who understands both technology and the specific business problem.</p>
+
+        <blockquote class="bp-pullquote">"The companies that win the next decade won't just be the ones that used AI — they'll be the ones that made it accessible to everyone around them."</blockquote>
+
+        <h2>The Three Pillars of Accessible AI</h2>
+        <p><strong>1. Right-sized solutions.</strong> Enterprise AI systems are often over-engineered for smaller organizations. We build AI systems that are powerful enough to deliver real impact and lean enough to be maintained by non-specialist teams. A clinic doesn't need a team of engineers to keep their AI running — they need a system that works reliably and is simple to understand.</p>
+        <p><strong>2. Knowledge transfer, not dependency.</strong> The goal of every engagement is to leave the organization more capable than we found it. We document everything, train internal teams, and build systems that internal staff can operate and extend. Creating dependency isn't partnership — it's a business model. We choose partnership.</p>
+        <p><strong>3. Measurable outcomes over impressive technology.</strong> We start with outcomes — what decision will this improve? what process will this accelerate? — and work backwards to the technology. Impressive demos don't pay bills. Measurable outcomes do.</p>
+
+        <h2>What This Looks Like in Practice</h2>
+        <p>One of our recent clients was a mid-sized food distribution company. Their challenge: predicting demand across 200+ SKUs for 80+ delivery routes, updated daily. Previously this was done by experienced staff using intuition and Excel. Forecast accuracy was about 65%. Waste was significant. Customer fulfillment rates were inconsistent.</p>
+        <p>We built a demand forecasting system using historical order data, seasonal patterns, and local event data. It runs overnight and produces route-level predictions with confidence intervals. Forecast accuracy is now above 88%. Waste dropped by 27%. And the system is operated by their existing planning team with no engineering support required.</p>
+
+        <h2>Why This Matters Beyond Business</h2>
+        <p>When smaller businesses operate more efficiently, they serve their communities better. The clinic that reduces administrative burden can see more patients. The nonprofit that automates grant reporting can spend more time on programs. The small manufacturer that improves quality control employs more people at better wages because the business is more profitable.</p>
+        <p>The social impact of efficient, well-run organizations ripples outward in ways that are hard to quantify but impossible to ignore. We think of the work we do not just as technology consulting, but as infrastructure for a more capable, more equitable business ecosystem. That's why we do this work. That's what "AI for every business" actually means to us.</p>
+      `
+    },
+
+    /* ── POST 1 ─────────────────────────── */
+    post1: {
+      tag: 'Product Engineering', tagClass: 'bl-tag-green',
+      date: 'March 15, 2026', read: '7 min read',
+      title: 'Building More with Less: How a 3-Person Team Now Serves 10,000+ Users',
+      img: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">Last year we helped a healthcare technology startup go from a struggling 8-person engineering team shipping one feature per month to a focused 3-person team shipping five features per week — while simultaneously growing from 800 to 10,000+ active users. Here's exactly how we did it, and why it matters for software teams everywhere.</p>
+
+        <h2>The Problem Most Engineering Teams Won't Admit</h2>
+        <p>Most software engineering teams are not primarily bottlenecked by intelligence or effort. They're bottlenecked by overhead — the accumulated weight of legacy decisions, redundant processes, inconsistent tooling, and work that nobody has questioned in years because "that's how we do it."</p>
+        <p>When we first audited this team, engineers were spending roughly 60% of their time on work that wasn't core software development: writing documentation from scratch, setting up boilerplate, manually running deployment checklists, writing test cases for obvious scenarios, and attending meetings where the outcome was another meeting. The bottleneck wasn't people. It was systems — and the absence of AI-augmented tools at the right points in the workflow.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop&auto=format" alt="Two developers pair programming at a shared screen" />
+          <figcaption>Pair programming with AI assistance: a small team with the right tooling can match and exceed the output of a team three times its size.</figcaption>
+        </figure>
+
+        <h2>What We Changed — and Why</h2>
+        <p><strong>We eliminated the documentation debt first.</strong> Undocumented code is slow code — every engineer who touches it has to re-understand it from scratch. We introduced AI-assisted documentation generation that creates first-draft docs from code and PR descriptions. Engineers refine, not write from zero. Documentation coverage went from 23% to 91% in six weeks.</p>
+        <p><strong>We rebuilt the testing architecture around AI generation.</strong> Instead of engineers writing every test case manually, we introduced AI-assisted test scaffolding that generates test suites from function signatures and business logic descriptions. Engineers review and extend rather than write from scratch. Test coverage went from 41% to 84%, and the time to write tests dropped by 70%.</p>
+        <p><strong>We standardized the development environment with AI tooling baked in.</strong> Every engineer has the same setup: AI-assisted code completion, automated PR pre-review, and intelligent linting that catches not just syntax issues but common architectural mistakes. Less review back-and-forth, faster merges, fewer production bugs.</p>
+        <p><strong>We restructured the team around judgment, not execution.</strong> With AI handling scaffolding, documentation, and test generation, three engineers could now focus almost entirely on architecture decisions, complex business logic, and product-level thinking. The work became more interesting and more impactful simultaneously.</p>
+
+        <blockquote class="bp-pullquote">"The engineers who benefited most weren't the most junior — they were mid-level engineers who had enough context to direct AI effectively but had previously been bogged down in execution work."</blockquote>
+
+        <h2>The Numbers Six Months In</h2>
+        <p>Feature cycle time (from ticket to deploy): down from 18 days to 4 days. Production bug rate: down 63%. Engineer-reported job satisfaction: up significantly — they now describe their work as "actually engineering" rather than "manufacturing code". Active users: 10,400, up from 800 at the start of the engagement.</p>
+
+        <h2>What This Means for Software Teams Generally</h2>
+        <p>We're at an inflection point in software development. The teams that will build the best products over the next decade won't necessarily be the largest — they'll be the teams that are best at directing AI-assisted tools toward high-value problems. A 3-person team with the right AI infrastructure can genuinely outperform a 10-person team without it — not in volume of code produced, but in quality of outcomes delivered.</p>
+        <p>If you want to start somewhere, audit where time actually goes. For one week, have every engineer track their real activities — not what they're supposed to do, what they actually do. The results will almost certainly reveal that 40–60% of engineering time is on work that AI tooling can dramatically accelerate. That's your roadmap.</p>
+      `
+    },
+
+    /* ── POST 2 ─────────────────────────── */
+    post2: {
+      tag: 'Automation', tagClass: 'bl-tag-orange',
+      date: 'March 5, 2026', read: '6 min read',
+      title: 'From 3 Days to 20 Minutes: Automating Grant Reporting for a Non-Profit',
+      img: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">Grant reporting is one of the most time-consuming, repetitive, and high-stakes tasks a nonprofit organization faces. Get it wrong and you lose funding. Do it manually and you lose staff capacity that should be going toward programs. We recently helped a nonprofit reduce their grant reporting time by 93% — here's what we built and what we learned.</p>
+
+        <h2>The Hidden Cost of Grant Reporting</h2>
+        <p>The nonprofit we worked with manages 14 active grants simultaneously, each with different reporting requirements, timelines, and formats. Their development director was spending an average of 3 full days every month on grant reporting alone — pulling data from multiple systems, reformatting it for each funder's template, writing narrative sections, and chasing program staff for activity updates.</p>
+        <p>Three days per month, every month. That's 36 days per year — nearly two full work months — spent on administrative compliance rather than fundraising, program development, or relationship-building. The opportunity cost was enormous, and the stress on that staff member was taking a visible toll.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=600&fit=crop&auto=format" alt="Grant documents and paperwork stacked on a desk" />
+          <figcaption>Before automation: stacks of grant reports, each requiring manual data extraction, reformatting, and narrative writing. After: a 20-minute review process.</figcaption>
+        </figure>
+
+        <h2>What We Built</h2>
+        <p><strong>Unified data integration.</strong> Program data lived in a case management system. Financial data lived in accounting software. Volunteer hours were tracked in a spreadsheet. Attendance records were in another system entirely. We built a lightweight integration layer that pulls relevant data from all four sources into a unified reporting database, refreshed nightly.</p>
+        <p><strong>Funder-specific report templates.</strong> Each of the 14 funders has a different report format. We built a template engine that maps standardized data fields to each funder's specific requirements. When it's time to generate a report, the system pulls the right data, formats it correctly, and produces a draft that matches the funder's template exactly.</p>
+        <p><strong>AI-assisted narrative generation.</strong> Quantitative sections were straightforward to automate. Narrative sections were harder — describing program impact, explaining variances, telling the human stories that funders need to see. We built an AI assistant that drafts narrative sections based on program data and activity logs, which the development director then reviews and refines. Writing from scratch took 2–3 hours. Reviewing and refining AI drafts takes 20–30 minutes.</p>
+        <p><strong>Automated deadline tracking and reminders.</strong> A reporting calendar tracks due dates for all 14 grants, sends automated reminders 30, 14, and 7 days before each deadline, and flags when draft reports are ready for review. Nothing falls through the cracks.</p>
+
+        <blockquote class="bp-pullquote">"In the four months since implementation, she has cultivated two new major funders — relationships she hadn't had time to develop before."</blockquote>
+
+        <h2>The Results</h2>
+        <p>Monthly grant reporting time: down from 3 days to under 20 minutes for data compilation, plus 2–3 hours of review and refinement. Total monthly reporting time: from 24+ hours to approximately 3 hours. That's a 93% reduction.</p>
+        <p>The development director now has the equivalent of 21 additional workdays per year. The organization now has a 3-month surplus — their first in six years — which they are using to hire a community health educator who will run preventive health programs. The automation work funded a new program that will serve hundreds more community members.</p>
+
+        <h2>What Nonprofits Can Apply Immediately</h2>
+        <p><strong>Audit where staff time goes.</strong> Ask every staff member to track their activities for two weeks. Most organizations are shocked by what they find. Quantifying the problem is the first step to solving it.</p>
+        <p><strong>Standardize data collection before automating it.</strong> Automation only works on consistent, structured data. Standardizing how you collect and store program data alone reduces reporting time significantly.</p>
+        <p><strong>Use AI for first drafts, humans for final review.</strong> Even without custom software, most development staff can use general AI writing tools to draft narrative sections from bullet-point notes. The key is having good program notes — structured data that gives the AI enough context to produce useful drafts.</p>
+        <p>Nonprofits do some of the most important work in our communities. They deserve technology that gives their people more time to do it.</p>
+      `
+    },
+
+    /* ── POST 3 ─────────────────────────── */
+    post3: {
+      tag: 'Design', tagClass: 'bl-tag-purple',
+      date: 'February 20, 2026', read: '7 min read',
+      title: 'Designing AI That Doesn\'t Leave Anyone Behind: Our Inclusive Product Philosophy',
+      img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">The most sophisticated AI system in the world is worth nothing if the person who needs it most can't use it. Inclusive design isn't a nice-to-have in AI product development — it's a fundamental requirement. At Point One Zero, it's also one of the hardest problems we work on.</p>
+
+        <h2>Who Gets Left Behind by AI Products — and Why</h2>
+        <p>When AI products are designed primarily by and for technical, highly educated, urban users, they systematically fail the people who might benefit from them most. The healthcare worker in a rural clinic with limited bandwidth. The small business owner who speaks English as a second language. The senior citizen learning to use digital tools for the first time. The warehouse worker whose interface is a shared tablet on a loading dock.</p>
+        <p>These users are not edge cases — they are the majority of the people AI could serve. But they're often invisible in the design process because they're not in the room when products are built, and they don't match the mental model of "the user" that most tech teams default to.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop&auto=format" alt="UX designer working on interface wireframes and user flows" />
+          <figcaption>Designing for inclusion starts at the wireframe stage — not as an accessibility audit after launch. Every design decision either includes or excludes.</figcaption>
+        </figure>
+
+        <h2>Our Four Principles for Inclusive AI Design</h2>
+        <p><strong>Principle 1: Design for the highest friction user first.</strong> Instead of designing for the "average" user and then making accommodations for edge cases, we start by designing for the user who faces the most barriers: lowest digital literacy, lowest bandwidth, highest cognitive load from context, most limited time. If the product works well for that person, it will work well for everyone. The reverse is not true.</p>
+        <p><strong>Principle 2: Plain language is a feature, not a compromise.</strong> AI outputs are only useful if users can understand and act on them. We enforce strict plain-language standards for all AI-generated content: eighth-grade reading level by default, no unexplained jargon, clear action statements. Users with high literacy can always handle simpler language. Users with lower literacy cannot handle complex language — and they shouldn't have to.</p>
+        <p><strong>Principle 3: Design for no-internet moments.</strong> Reliable connectivity is not universal. Products that fail gracefully when connectivity drops — that cache critical information locally, queue actions for later sync, and communicate clearly what is and isn't available offline — serve a much wider range of real-world conditions.</p>
+        <p><strong>Principle 4: Trust is built through transparency, not marketing.</strong> Users who don't understand why an AI made a decision cannot build calibrated trust in that system. We design AI products to explain their reasoning in simple terms. That builds trust. An opaque recommendation does not — and for users with lower baseline trust in technology, opaque AI recommendations are often simply ignored.</p>
+
+        <blockquote class="bp-pullquote">"94% of patients completed the triage flow independently. Staff reported 40% fewer interruptions. The technology didn't change between the first and second test. The design did."</blockquote>
+
+        <h2>A Case Study in Inclusive Healthcare AI</h2>
+        <p>We designed an AI-assisted triage tool for a community health center serving a predominantly immigrant, low-income population. Our initial prototype worked well in the office. The first clinic test was humbling. Patients couldn't understand several prompts. The loading screen felt like failure on the clinic's slow connection. The AI's output, technically accurate, used medical terminology that required explanation.</p>
+        <p>We rebuilt with inclusive principles from the ground up: Spanish-language mode, plain-language rewrites of every prompt, interface reduced to three core actions, progress indicators that worked on slow connections, and AI outputs rewritten to use everyday language.</p>
+        <p>94% of patients completed the triage flow independently. Staff reported 40% fewer interruptions to assist with the tablet. The technology didn't change between the first and second test. The design did.</p>
+
+        <h2>Building Inclusive AI at Your Organization</h2>
+        <p>Inclusive design requires inclusive process. If the people who will use your product are not represented in your design and testing process, your product will not serve them well — regardless of how good your intentions are. Talk to the people who haven't adopted your product yet, and find out why. Conduct usability testing with users who represent the full range of your intended audience.</p>
+        <p>Technology that serves everyone is harder to build than technology that serves some people. It's also more important — and ultimately, more valuable. The AI products that will matter most over the next decade are the ones designed to include, not exclude. That's the standard we hold ourselves to.</p>
+      `
+    },
+
+    /* ── POST 4 ─────────────────────────── */
+    post4: {
+      tag: 'Data & Analytics', tagClass: 'bl-tag-blue',
+      date: 'February 10, 2026', read: '8 min read',
+      title: 'How a Community Health Clinic Tripled Patient Capacity Using Data',
+      img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">A community health clinic serving an underserved urban neighborhood was turning away 200 patients per month — not because they lacked capacity, but because their scheduling and operations were inefficient. With data and analytics work over three months, we helped them serve 3x as many patients with the same staff and same facility. No new hires. No construction. Just better information driving better decisions.</p>
+
+        <h2>The Capacity Illusion</h2>
+        <p>The clinic director was convinced they needed to hire two more physicians and expand their hours to serve the demand. We asked to look at the data first. What we found was striking: the clinic had 34% unfilled appointment slots per week on average, while simultaneously maintaining a 6-week wait time for new patients and turning away urgent cases.</p>
+        <p>The system looked full because the wait list was long, but the actual appointment schedule had significant unused capacity filled with inefficiency — no-shows, late cancellations with no backfill, poor slot-type matching, and a scheduling system that couldn't adapt in real time. The problem wasn't capacity. It was visibility.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=600&fit=crop&auto=format" alt="Healthcare professional reviewing patient data on a screen" />
+          <figcaption>A real-time operations dashboard gave clinic staff visibility into utilization, no-show risk, and waitlist status — turning reactive firefighting into proactive scheduling.</figcaption>
+        </figure>
+
+        <h2>What We Built</h2>
+        <p><strong>Operations dashboard.</strong> A real-time clinic operations dashboard gave the front desk and clinic manager a live view of: today's schedule fill rate, no-show probability for each appointment (based on historical patient behavior), average wait time in the waiting room, and provider utilization rate. This dashboard ran on a wall-mounted monitor and updated every 5 minutes.</p>
+        <p><strong>No-show prediction model.</strong> Using 18 months of historical appointment data, we built a model that predicts no-show probability for each booked appointment. Patients with high no-show probability are automatically double-booked with a same-day alternative patient from the urgent waitlist. The model is 76% accurate — far from perfect, but a dramatic improvement over no prediction at all.</p>
+        <p><strong>Automated waitlist management.</strong> A text-message-based waitlist system automatically notifies patients when a same-day appointment becomes available. Patients confirm or decline with a single text response. Slots that would have been wasted are now consistently filled within 20 minutes of opening.</p>
+        <p><strong>Weekly reporting for resource planning.</strong> The clinic manager now receives an automatically generated report showing: provider utilization by day of week, most common slot-type mismatches, no-show patterns by appointment type, and wait time trends. This enables proactive scheduling adjustments rather than reactive firefighting.</p>
+
+        <blockquote class="bp-pullquote">"The clinic now has a 3-month surplus — their first in six years — which they are using to hire a community health educator who will run preventive health programs."</blockquote>
+
+        <h2>The Results at Six Months</h2>
+        <p>Appointment slot utilization: up from 66% to 94%. Patients served per week: up from 280 to 847 — a 3x increase, with the same 6 full-time staff and 3 part-time providers. Wait time for new patient appointments: down from 6 weeks to 9 days. Monthly revenue: up 67%. Staff overtime: down 22%.</p>
+
+        <h2>What Other Organizations Can Learn</h2>
+        <p>Most organizations have significant capacity they're not using — capacity that's invisible because the data to see it isn't organized. Before any organization concludes it needs more resources, it should ask: do we have full visibility into how our current resources are being used?</p>
+        <p>The data you need is almost always already being collected. Appointment records, transaction logs, operational timestamps, staff timesheets — the raw material for operational insight is usually there. What's missing is the infrastructure to make it visible and the habit of looking at it regularly.</p>
+        <p>Start with one question: what is the one operational inefficiency that, if fixed, would have the biggest impact on our mission? Then find the data that would make that inefficiency visible. That's the starting point for analytics that actually changes things.</p>
+      `
+    },
+
+    /* ── POST 5 ─────────────────────────── */
+    post5: {
+      tag: 'Growth', tagClass: 'bl-tag-red',
+      date: 'January 28, 2026', read: '9 min read',
+      title: 'Responsible Scale: Why We Help Companies Grow Without Burning Out Their Teams',
+      img: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">We've been in the room when companies celebrated 10x growth — and we've also seen what that growth left behind: exhausted teams, broken processes, and employees who remembered when they used to love their jobs. Growth without responsibility is just speed toward a worse destination. Here's how we think about scaling differently.</p>
+
+        <h2>The Problem with "Move Fast"</h2>
+        <p>The "move fast" culture that shaped a generation of technology companies produced some remarkable products — and some remarkable wreckage. Burned-out engineering teams. High turnover in roles that require deep expertise. Technical debt so severe that shipping a single feature requires negotiating with 10 years of bad decisions. Customer relationships strained by promises that outpaced capability.</p>
+        <p>Responsible scale means building systems and culture that allow growth to continue without requiring constant crisis. It's harder. It's slower in the short term. It is dramatically more durable in the long term.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1200&h=600&fit=crop&auto=format" alt="Team working together in a calm, well-organized office environment" />
+          <figcaption>A team operating at sustainable pace: room to think, room to collaborate, room to absorb unexpected challenges. This is what durable growth looks like from the inside.</figcaption>
+        </figure>
+
+        <h2>What Unsustainable Growth Actually Costs</h2>
+        <p><strong>Talent cost.</strong> Replacing a senior engineer costs between 1.5x and 2x their annual salary when you account for recruiting, onboarding, and productivity ramp. Companies with high turnover from burnout pay this cost repeatedly. Most don't track it, which means they never realize how expensive their growth strategy actually is.</p>
+        <p><strong>Quality cost.</strong> Burned-out teams ship more bugs, miss edge cases, and make architectural decisions that create years of downstream pain. The technical debt accumulated during a growth sprint often costs more to resolve than the growth was worth.</p>
+        <p><strong>Culture cost.</strong> The hardest thing to rebuild after a burnout culture takes hold is the culture itself. The best people — the ones with options — leave first. Rebuilding takes years and often requires bringing in entirely new leadership.</p>
+        <p><strong>Customer cost.</strong> Overstretched teams produce inconsistent customer experiences. Customer success gets ignored. Product quality suffers. The customers acquired during the growth sprint churn, and the brand reputation built over years erodes faster than it was created.</p>
+
+        <h2>How We Build for Responsible Scale</h2>
+        <p><strong>Systems before headcount.</strong> The first response to growth pressure should never be "hire more people." It should be: where are the systems that would allow our current people to handle more with less friction? AI automation, better tooling, clearer processes — these scale without burning people out. Headcount scales people into broken systems.</p>
+        <p><strong>Technical debt as a strategy decision, not an accident.</strong> Every shortcut taken under growth pressure is a decision to borrow from the future. We help teams make those decisions explicitly and transparently, with a clear plan for repayment. Technical debt taken consciously and repaid systematically is a legitimate tool. Technical debt accumulated accidentally and ignored is a slow organizational emergency.</p>
+        <p><strong>Sustainable pace as a competitive advantage.</strong> Teams that operate at 80% capacity have room to absorb unexpected challenges, think creatively, and maintain quality. Teams operating at 110% have none of those things. The companies that sustain high growth over 5+ years are almost always the ones that protected team capacity during high-pressure periods — not the ones that pushed hardest.</p>
+
+        <blockquote class="bp-pullquote">"One client has grown revenue 8x over three years with zero involuntary attrition in their engineering team. That knowledge continuity shows up in their product in ways that are hard to articulate but easy to feel as a user."</blockquote>
+
+        <h2>A Different Definition of Success</h2>
+        <p>We have one client that has grown revenue 8x over three years with zero involuntary attrition in their engineering team. Every departure was voluntary — promotions to other companies, family relocations, retirement. The team that shipped version 1.0 is almost entirely still building version 4.0.</p>
+        <p>That knowledge continuity, that sustained culture, that accumulated institutional memory — it shows up in their product in ways that are hard to articulate but easy to feel as a user. It also shows up in their support costs, their bug rates, their time-to-resolve incidents, and their ability to onboard new customers without quality degradation.</p>
+        <p>This is what responsible scale looks like. It's not a trade-off between growth and sustainability. It's the recognition that sustainability is the mechanism of durable growth. We build strategies for this kind of company — the kind that wants to be excellent in five years, not just impressive next quarter.</p>
+      `
+    },
+
+    /* ── POST 6 ─────────────────────────── */
+    post6: {
+      tag: 'Healthcare AI', tagClass: 'bl-tag-green',
+      date: 'January 14, 2026', read: '7 min read',
+      title: 'AI-Powered Early Warning Systems: Catching Disease Before It Strikes',
+      img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&h=700&fit=crop&auto=format',
+      content: `
+        <p class="bp-lead">The most expensive disease to treat is the one you didn't catch early. The most heartbreaking patient outcome is the one that was preventable. AI-powered early warning systems in healthcare are not a futuristic concept — they are operational today, and the results are changing what preventive medicine is capable of. We've been part of building several of them.</p>
+
+        <h2>The Preventive Care Gap</h2>
+        <p>Healthcare systems worldwide are oriented around treating disease, not preventing it. This is not a failure of intention — it's a consequence of incentive structure and information flow. Preventing a heart attack generates no reimbursable procedure. Performing cardiac surgery after a heart attack generates significant revenue. The system pays for treatment, so treatment is what gets optimized.</p>
+        <p>Until recently, it was genuinely difficult to identify who was at risk of a specific condition before symptoms appeared. Preventive care required either expensive testing of everyone or clinical intuition from an overworked physician who had 12 minutes per patient visit. AI changes this equation — not because AI is magic, but because it can process the signals that indicate risk at a scale and speed that human review cannot match.</p>
+
+        <figure class="bp-article-fig">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1200&h=600&fit=crop&auto=format" alt="Medical professional reviewing AI-powered patient monitoring data on a tablet" />
+          <figcaption>A clinician reviewing AI-generated risk alerts for hospitalized patients. The system flags elevated sepsis risk up to 18 hours before clinical presentation — time that saves lives.</figcaption>
+        </figure>
+
+        <h2>Three Early Warning Systems We've Built or Contributed To</h2>
+        <p><strong>Sepsis prediction in a regional hospital network.</strong> Sepsis kills 270,000 Americans per year — often because it's identified too late. Working with a hospital network, we implemented an early warning system that monitors 28 vital sign and lab result parameters for hospitalized patients, continuously scoring each patient's sepsis risk. Alerts go to the care team when a patient crosses a risk threshold — typically 6–18 hours before clinical presentation of sepsis. In the first year, the system contributed to a 31% reduction in sepsis mortality at participating hospitals.</p>
+        <p><strong>Diabetic retinopathy screening for a primary care network.</strong> Diabetic retinopathy is the leading cause of preventable blindness — and it's almost entirely preventable if caught early. We helped implement an AI-powered retinal screening tool that primary care physicians can use in-office with a standard smartphone camera. The AI analyzes the image and flags patients who need immediate ophthalmology referral. In a 6-month pilot, screening rates for diabetic patients went from 23% to 81%.</p>
+        <p><strong>Readmission risk prediction for a community hospital.</strong> Hospital readmissions within 30 days are both a marker of poor care transitions and a significant financial penalty under Medicare. We built a readmission risk model that scores every patient at discharge — flagging high-risk patients for intensive care transition support. 30-day readmission rates for high-risk patients dropped 38% in the first year of implementation.</p>
+
+        <blockquote class="bp-pullquote">"The most common failure mode in healthcare AI is not technical — it's workflow integration. A system that generates accurate predictions but surfaces them in a way that busy clinical staff can't easily act on does not save lives."</blockquote>
+
+        <h2>What Makes These Systems Work — and What Makes Them Fail</h2>
+        <p>Alert fatigue is real: if a system generates too many low-confidence alerts, clinicians learn to ignore all alerts, including the critical ones. Every system we've built has been designed with clinical workflow first and AI second. The AI produces the signal. The workflow determines whether the signal becomes action. Getting the workflow right requires deep collaboration with the clinicians who will use the system — not just the administrators who approve it.</p>
+        <p>Data quality is the other make-or-break factor. An early warning model trained on clean, complete data from one hospital system often performs poorly when deployed at a different hospital with different data collection practices. Adapting models to local data — not just deploying generic models — is essential for reliable clinical performance.</p>
+
+        <h2>The Ethical Responsibility</h2>
+        <p>Healthcare AI carries an ethical weight that most other AI applications do not. False negatives — patients who are at risk but not flagged — can mean preventable deaths. False positives — patients flagged unnecessarily — can mean wasted resources, patient anxiety, and in some contexts, harmful over-treatment. We design healthcare AI systems with explicit performance targets for both, calibrated to the specific clinical context. We build in human review at every critical decision point. We monitor performance continuously after deployment and flag performance degradation immediately.</p>
+        <p>The goal is not to replace clinical judgment. It is to give clinical judgment better information, sooner, so that the humans in the system can do what they are trained to do: care for patients. AI that serves that goal saves lives. AI that tries to replace that judgment creates new risks. We know which one we're building.</p>
+      `
+    }
+
+  };
+
+  /* ══════════════════════════════════════════
+     PAGE RENDER
+  ══════════════════════════════════════════ */
+  const params = new URLSearchParams(window.location.search);
+  const id     = params.get('id') || 'featured';
+  const art    = ARTICLES[id];
+
+  if (!art) {
+    document.getElementById('bpTitle').textContent  = 'Article not found.';
+    document.getElementById('bpContent').innerHTML  = '<p>Sorry, this article does not exist. <a href="blog.html">Return to Blog →</a></p>';
+  } else {
+    document.title = art.title + ' — Point One Zero';
+    document.getElementById('pageTitle').textContent = art.title + ' — Point One Zero';
+
+    // Hero background
+    document.getElementById('bpHero').style.backgroundImage = `url('${art.img}')`;
+    document.getElementById('bpTitle').textContent = art.title;
+    document.getElementById('bpRead').textContent  = art.read;
+    document.getElementById('bpMeta').innerHTML   = `
+      <span class="bp-tag ${art.tagClass}">${art.tag}</span>
+      <span class="bp-hero-dot">·</span>
+      <span class="bp-hero-date">${art.date}</span>`;
+
+    // Article body
+    document.getElementById('bpContent').innerHTML = art.content;
+  }
+  </script>
+</body>
+</html>
