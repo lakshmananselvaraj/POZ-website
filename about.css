@@ -406,6 +406,120 @@
   transform: translateY(0);
 }
 
+/* ── TEAM ── */
+.ab-team {
+  padding   : 100px 40px;
+  background: var(--white-bg);
+}
+.ab-team-head {
+  text-align : center;
+  max-width  : 600px;
+  margin     : 0 auto 64px;
+}
+.ab-team-head h2 {
+  font-size    : clamp(30px, 3.5vw, 48px);
+  font-weight  : 800;
+  line-height  : 1.15;
+  letter-spacing: -1.5px;
+  color        : var(--text-dark);
+}
+.ab-team-grid {
+  display              : grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap                  : 18px;
+  max-width            : 1160px;
+  margin               : 0 auto;
+}
+.ab-team-card {
+  position     : relative;
+  aspect-ratio : 3/4;
+  border-radius: 18px;
+  overflow     : hidden;
+  background   : #1a1a2e;
+  cursor       : pointer;
+}
+.ab-team-photo {
+  width           : 100%;
+  height          : 100%;
+  object-fit      : cover;
+  object-position : center top;
+  display         : block;
+  transition      : transform .5s ease;
+}
+.ab-team-card:hover .ab-team-photo {
+  transform: scale(1.06);
+}
+
+/* Gradient overlay — slides up from bottom.
+   Only the arrow strip (~46px) peeks out by default. */
+.ab-team-overlay {
+  position  : absolute;
+  bottom    : 0;
+  left      : 0;
+  right     : 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 18, 55, 0.22)  0%,
+    rgba(8, 18, 55, 0.80) 38%,
+    #080f33              100%
+  );
+  transform : translateY(calc(100% - 46px));
+  transition: transform .42s cubic-bezier(.4,0,.2,1);
+}
+.ab-team-card:hover .ab-team-overlay {
+  transform: translateY(0);
+}
+
+/* Arrow — always visible, rotates on hover */
+.ab-team-arrow {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  padding        : 12px 0 8px;
+  color          : rgba(255,255,255,0.75);
+  transition     : transform .35s ease;
+}
+.ab-team-card:hover .ab-team-arrow {
+  transform: rotate(180deg);
+}
+
+/* Name / role / LinkedIn */
+.ab-team-info {
+  padding   : 4px 14px 18px;
+  text-align: center;
+}
+.ab-team-name {
+  font-size  : 15px;
+  font-weight: 700;
+  color      : #ffffff;
+  margin     : 0 0 4px;
+  line-height: 1.25;
+}
+.ab-team-role {
+  font-size  : 11.5px;
+  color      : rgba(255,255,255,0.6);
+  margin     : 0 0 14px;
+  line-height: 1.4;
+}
+.ab-team-li-link {
+  display        : inline-flex;
+  align-items    : center;
+  justify-content: center;
+  width          : 30px;
+  height         : 30px;
+  background     : rgba(255,255,255,0.12);
+  border         : 1.5px solid rgba(255,255,255,0.22);
+  border-radius  : 7px;
+  color          : #fff;
+  text-decoration: none;
+  transition     : background .2s, border-color .2s, transform .2s;
+}
+.ab-team-li-link:hover {
+  background  : #0a66c2;
+  border-color: #0a66c2;
+  transform   : scale(1.1);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .ab-who,
@@ -421,6 +535,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .ab-flip-card { aspect-ratio: 4/5; }
+  .ab-team-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
 }
 @media (max-width: 600px) {
   .ab-hero { padding: 60px 20px 0; }
@@ -431,4 +546,6 @@
   .ab-exp-card:last-child { grid-column: auto; }
   .ab-who-stats { gap: 24px; }
   .ab-hero-img-strip { height: 240px; }
+  .ab-team { padding: 60px 20px; }
+  .ab-team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }

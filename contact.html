@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Point One Zero</title>
+  <meta name="description" content="Get in touch with PointOneZero. Tell us about your idea and we will help bring it to life. Princeton, NJ. Response within 24 hours." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://poz-website.vercel.app/contact.html" />
+  <link rel="icon" href="POZ Logo.png" type="image/png" />
+  <meta property="og:title" content="Contact PointOneZero | Start Your AI Project" />
+  <meta property="og:description" content="Tell us about your idea and we will help bring it to life. Get in touch today." />
+  <meta property="og:image" content="https://poz-website.vercel.app/ai-workflow.png" />
+  <meta property="og:url" content="https://poz-website.vercel.app/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Contact PointOneZero | Start Your AI Project Today</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
@@ -16,7 +26,7 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+        <img src="POZ Logo.png" alt="PointOneZero Logo" class="logo-img" />
         <span>Point One Zero</span>
       </a>
       <ul class="nav-links">
@@ -24,7 +34,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Our Services</a></li>
         <li><a href="work.html">Our Work</a></li>
-        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="blog.html">Blog</a></li>
       </ul>
       <a href="contact.html" class="nav-cta nav-active">Contact us <span class="cta-arrow">&#9658;</span></a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
@@ -41,7 +51,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Our Services</a></li>
       <li><a href="work.html">Our Work</a></li>
-      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact us</a></li>
     </ul>
   </div>
@@ -156,7 +166,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="logo footer-logo">
-          <img src="POZ Logo.png" alt="Point One Zero Logo" class="logo-img" />
+          <img src="POZ Logo.png" alt="PointOneZero Logo" class="logo-img" />
           <span>Point One Zero</span>
         </a>
         <address class="footer-addr">
@@ -179,11 +189,11 @@
         <div class="fcol">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html">AI Strategy</a></li>
-            <li><a href="services.html">Product Engineering</a></li>
-            <li><a href="services.html">AI Automation</a></li>
-            <li><a href="services.html">Data &amp; Analytics</a></li>
-            <li><a href="services.html">Design Studio</a></li>
+            <li><a href="services.html">AI Product Development</a></li>
+            <li><a href="services.html">AI Automation Solutions</a></li>
+            <li><a href="services.html">Data Intelligence Platforms</a></li>
+            <li><a href="services.html">Product Design &amp; UX</a></li>
+            <li><a href="services.html">System Integration</a></li>
           </ul>
         </div>
         <div class="fcol">
@@ -221,14 +231,28 @@
 
   <script src="main.js"></script>
   <script>
-    // Contact form
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      document.getElementById('ctSuccess').style.display = 'block';
-      this.reset();
-      setTimeout(() => { document.getElementById('ctSuccess').style.display = 'none'; }, 4000);
+      const btn = document.getElementById('ctSubmitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/mnqedplz', {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('ctSuccess').style.display = 'block';
+          this.reset();
+          setTimeout(() => { document.getElementById('ctSuccess').style.display = 'none'; }, 5000);
+        } else {
+          alert('Something went wrong. Please email admin@pointonezero.com');
+        }
+      } catch { alert('Network error. Please email admin@pointonezero.com'); }
+      btn.textContent = 'Get in Touch';
+      btn.disabled = false;
     });
-    // Newsletter form
     document.getElementById('nlForm').addEventListener('submit', function(e) {
       e.preventDefault();
       document.getElementById('nlSuccess').style.display = 'block';
