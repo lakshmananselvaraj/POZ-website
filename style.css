@@ -367,12 +367,11 @@ body {
   50%     { transform: scale(1.12); opacity: 1;  }
 }
 .hero-img {
-  width    : 100%;
-  max-width: 700px;
-  position : relative;
-  z-index  : 1;
-  animation: floatImg 5s ease-in-out infinite;
-  filter   : drop-shadow(0 24px 48px rgba(11,101,227,.18));
+  width      : 100%;
+  max-width  : 700px;
+  position   : relative;
+  z-index    : 1;
+  mix-blend-mode: multiply;
 }
 @keyframes floatImg {
   0%,100% { transform: translateY(0)   rotate(0deg); }
